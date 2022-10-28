@@ -71,12 +71,17 @@ namespace ReMastersLib
             LSDDumper.Dump(messages, jsonPath, txtPath);
         }
 
-        public void DumpMessagesDownload(string outRoot)
+        public void DumpMessagesDownload(string outRoot, string repoRoot = null)
         {
             var messages = Path.Combine(outRoot, "Messages");
             var jsonPath = Path.Combine(outRoot, "lsddump", "dl");
             var txtPath = Path.Combine(outRoot, "lsddump", "lsd_dl.txt");
             LSDDumper.Dump(messages, jsonPath, txtPath);
+
+            if (repoRoot == null) return;
+            
+            Console.WriteLine("Copying lsd files to repository...");
+            Util.Copy(Path.Combine(outRoot, "lsddump"), Path.Combine(repoRoot, "text", "lsddump"));
         }
 
         public void DumpResources(string outRoot)
@@ -259,7 +264,7 @@ namespace ReMastersLib
             DumpMiscVideo(outRoot);
         }
 
-        public void DumpProto(string outRoot, bool tableLayout = true)
+        public void DumpProto(string outRoot, string repoRoot = "", bool tableLayout = true)
         {
             var pdf = Path.Combine(outRoot, "protodump");
             Directory.CreateDirectory(pdf);
@@ -299,6 +304,11 @@ namespace ReMastersLib
                     File.WriteAllText(outpath, result);
                 }
             }
+
+            if (repoRoot == null) return;
+            
+            Console.WriteLine("Copying dumped proto files to repository...");
+            Util.Copy(Path.Combine(outRoot, "protodump"), Path.Combine(repoRoot, "text", "protodump"));
         }
 
         /// <summary>

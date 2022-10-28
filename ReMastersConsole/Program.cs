@@ -13,13 +13,18 @@ namespace ReMastersConsole
                 Console.ReadLine();
             }
 
+            const string GameVersion = "2.26.0";
+
             var paths = new GameDataPaths
             {
-                UnpackedAPKPath = @"E:\masters-inv\2.9.0\apk",
-                DownloadPath = @"E:\masters-inv\2.9.0\downloaded-resource-dir",
-                ShardPath = @"E:\masters-inv\2.9.0\downloaded-resource-dir\assetdb_shard",
+                UnpackedAPKPath = @"D:\Documents\Hack_Datamine\Switch\Tools\ReMasters\data\v" + GameVersion + @"\apk",
+                DownloadPath = @"D:\Documents\Hack_Datamine\Switch\Tools\ReMasters\data\v" + GameVersion + @"\resources",
+                ShardPath = @"D:\Documents\Hack_Datamine\Switch\Tools\ReMasters\data\v" + GameVersion + @"\resources\assetdb_shard",
 
-                OutputPath = @"E:\masters-inv\2.9.0\dump",
+                OutputPath = @"D:\Documents\Hack_Datamine\Switch\Tools\ReMasters\temp",
+                
+                RepositoryPath = @"D:\Documents\Hack_Datamine\Switch\Tools\ReMasters\Repository",
+                KTXConverterPath = @"D:\Documents\Hack_Datamine\Switch\Tools\ReMasters\PVRTexToolCLI.exe",
             };
 
             var settings = new DumpSettings(paths)
@@ -28,12 +33,15 @@ namespace ReMastersConsole
                 DumpStringsAPK = true,
 
                 DumpResources = true,
-                DumpSound = true,
-                DumpVideo = true,
-                DumpProto = false,
+                DumpSound = false,
+                DumpVideo = false,
+                DumpProto = true,
             };
 
             settings.DumpGameData();
+            settings.ConvertKTX();
+            
+            
         }
     }
 }
