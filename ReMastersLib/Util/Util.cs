@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+using System.Runtime.InteropServices;
 
 namespace ReMastersLib
 {
@@ -33,6 +36,41 @@ namespace ReMastersLib
                 DirectoryInfo nextTargetSubDir = target.CreateSubdirectory(subDirectory.Name);
                 CopyAll(subDirectory, nextTargetSubDir);
             }
+        }
+
+        public static string[] GetNewOrModified(string[] currentPath, string[] previousPath, GameDataPaths paths)
+        {
+            List<String> curr = currentPath
+                .Select(path => path.ToString()
+                    .Replace(paths.OutputPath, "")
+                    .TrimStart(Path.DirectorySeparatorChar)
+                )
+                .ToList();
+            
+            List<String> prev = previousPath
+                .Select(path => path.ToString()
+                    .Replace(paths.PreviousPath, "")
+                    .TrimStart(Path.DirectorySeparatorChar)
+                )
+                .ToList();
+
+            List<String> newModifiedFiles = curr.Except(prev)
+                .ToList();
+
+            foreach (string file in curr.Except(newModifiedFiles))
+            {
+                string currFile = Path.Combine(paths.OutputPath, file);
+                string prevFile = Path.Combine(paths.PreviousPath, file);
+                
+                if (!File.ReadAllBytes(currFile).SequenceEqual(File.ReadAllBytes(prevFile)))
+                {
+                    newModifiedFiles.Add(file);
+                }
+            }
+
+            return newModifiedFiles
+                .Select(path => Path.Combine(paths.OutputPath, path))
+                .ToArray();
         }
     }
 }

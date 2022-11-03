@@ -44,17 +44,33 @@ namespace ReMastersLib
 
         public void ConvertKTX()
         {
-            string[] files = Directory.EnumerateFiles(Paths.OutputPath, "*.ktx", SearchOption.AllDirectories).ToArray();
-            string[] images = Directory.EnumerateFiles(Paths.OutputPath, "*.*", SearchOption.AllDirectories)
+            string[] outFiles = Directory.EnumerateFiles(Paths.OutputPath, "*.ktx", SearchOption.AllDirectories).ToArray();
+            string[] outImages = Directory.EnumerateFiles(Paths.OutputPath, "*.*", SearchOption.AllDirectories)
                 .Where(s => s.EndsWith(".png") || s.EndsWith(".jpg"))
                 .ToArray();
+
+            string[] files = outFiles; 
+            string[] images = outImages;
+            
+            if (!String.IsNullOrEmpty(Paths.PreviousPath))
+            {
+                string[] prevFiles = Directory.EnumerateFiles(Paths.PreviousPath, "*.ktx", SearchOption.AllDirectories).ToArray();
+                string[] prevImages = Directory.EnumerateFiles(Paths.PreviousPath, "*.*", SearchOption.AllDirectories)
+                    .Where(s => s.EndsWith(".png") || s.EndsWith(".jpg"))
+                    .ToArray();
+            
+                // Récupération des images qui ont été rajoutées OU modifiées
+                images = Util.GetNewOrModified(outImages, prevImages, Paths);
+            
+                // Récupération des fichiers qui ont été rajoutés OU modifiés
+                files = Util.GetNewOrModified(outFiles, prevFiles, Paths);
+            }
 
             string outPath = Path.Combine(Paths.RepositoryPath, "images");
 
             //Copie de tous les fichiers png et jpg
             foreach (string file in images)
             {
-                Console.WriteLine(file);
                 DirectoryInfo outDir = Directory.CreateDirectory(Path.GetDirectoryName(file).Replace(Paths.OutputPath, outPath));
                 File.Copy(file, Path.Combine(outDir.FullName, Path.GetFileName(file)), true);
             }

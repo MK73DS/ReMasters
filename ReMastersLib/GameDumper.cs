@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Text;
+using Grpc.Core.Utils;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using K4os.Hash.xxHash;
@@ -88,7 +89,7 @@ namespace ReMastersLib
         {
             // dump the abnd's, and track which ones we've already seen
             var processed = new HashSet<string>();
-
+            
             foreach (var f in ResourceDB)
             {
                 // Get the file's location on the disk
@@ -115,6 +116,9 @@ namespace ReMastersLib
 
                 processed.Add(fn);
             }
+            
+            // Title & Splash Screens
+            Util.Copy(Path.Combine(BasePath, "assets/resources/assets/ui/Title/image"), Path.Combine(outRoot, "ui/Title"));
         }
 
         public void DumpSound(string outRoot)
