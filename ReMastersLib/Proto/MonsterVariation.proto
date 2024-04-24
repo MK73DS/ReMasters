@@ -15,8 +15,8 @@ message MonsterVariation {
     int64 move_2_id = 10;
     int64 move_3_id = 11;
     int64 move_4_id = 12;
-    int64 move_5_id = 13;
-    int64 move_6_id = 14;
+    int64 type = 13;
+    int64 weakness = 14;
     int32 passive_1_id = 15;
     int32 passive_2_id = 16;
     int32 passive_3_id = 17;

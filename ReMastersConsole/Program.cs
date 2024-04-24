@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using ReMastersLib;
 
 namespace ReMastersConsole
@@ -15,12 +16,13 @@ namespace ReMastersConsole
                 Console.WriteLine("Not a console app, really. Don't do that!");
                 Console.ReadLine();
             }
-            
-            const string DataPath = @"D:\Documents\Hack_Datamine\Switch\Tools\ReMasters\data";
+
+            const string WorkingDir = @"D:\Documents\Hack_Datamine\Switch\Tools\ReMasters";
+            const string DataDir = WorkingDir + @"\data\";
 
             string[] versionsList = Directory
-                .GetDirectories(DataPath)
-                .Select(dir => dir.Replace(DataPath + @"\", ""))
+                .GetDirectories(DataDir)
+                .Select(dir => dir.Replace(DataDir, ""))
                 .OrderBy(s => s)
                 .ToArray();
 
@@ -36,38 +38,55 @@ namespace ReMastersConsole
 
             var paths = new GameDataPaths
             {
-                RepositoryPath = @"D:\Documents\Hack_Datamine\Switch\Tools\ReMasters\Repository",
-                KTXConverterPath = @"D:\Documents\Hack_Datamine\Switch\Tools\ReMasters\PVRTexToolCLI.exe",
+                DataPath = DataDir,
+                RepositoryPath = WorkingDir + @"\Repository",
+                KTXConverterPath = WorkingDir + @"\PVRTexToolCLI.exe",
                 
-                UnpackedAPKPath = @"D:\Documents\Hack_Datamine\Switch\Tools\ReMasters\data\" + gameVersions.Current() + @"\apk",
-                DownloadPath = @"D:\Documents\Hack_Datamine\Switch\Tools\ReMasters\data\" + gameVersions.Current() + @"\resources",
-                ShardPath = @"D:\Documents\Hack_Datamine\Switch\Tools\ReMasters\data\" + gameVersions.Current() + @"\resources\assetdb_shard",
+                UnpackedAPKPath = DataDir + gameVersions.Current() + @"\apk",
+                DownloadPath = DataDir + gameVersions.Current() + @"\resources",
+                ShardPath = DataDir + gameVersions.Current() + @"\resources\assetdb_shard",
                 
-                OutputPath = @"D:\Documents\Hack_Datamine\Switch\Tools\ReMasters\out\" + gameVersions.Current(),
+                OutputPath = WorkingDir + @"\out\" + gameVersions.Current(),
             };
+
+            Directory.CreateDirectory(paths.OutputPath);
 
             if (!String.IsNullOrEmpty(gameVersions.Previous()))
             {
-                paths.PreviousPath =
-                    @"D:\Documents\Hack_Datamine\Switch\Tools\ReMasters\out\" + gameVersions.Previous();
+                paths.PreviousPath = WorkingDir + @"\out\" + gameVersions.Previous();
                 
                 Directory.CreateDirectory(paths.PreviousPath);
             }
 
+            #if DEBUG
             var settings = new DumpSettings(paths)
-            {
-                DumpStringsDL = true,
-                DumpStringsAPK = true,
+                {
+                    DumpStringsDL = false,
+                    DumpStringsAPK = false,
 
-                DumpResources = true,
-                DumpSound = false,
-                DumpVideo = false,
-                DumpProto = true,
-            };
-            
-            settings.DumpGameData();
-            settings.ConvertKTX();
-            
+                    DumpResources = false,
+                    DumpSound = false,
+                    DumpVideo = false,
+                    DumpProto = true,
+                };
+
+                settings.DumpGameData();
+            #else
+                var settings = new DumpSettings(paths)
+                {
+                    DumpStringsDL = true,
+                    DumpStringsAPK = true,
+
+                    DumpResources = true,
+                    DumpSound = false,
+                    DumpVideo = false,
+                    DumpProto = true,
+                };
+
+                settings.DumpGameData();
+                settings.ConvertKTX();
+            #endif
+
         }
     }
 }

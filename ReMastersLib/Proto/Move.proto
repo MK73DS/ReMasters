@@ -37,6 +37,8 @@ enum Group {
     Regular = 2;
     Sync = 3;
     Unity = 4;
+		Maxmove = 5;
+		Buddy = 6;
 }
 
 enum Target {

@@ -5,25 +5,25 @@ package ReMastersLib;
 message MoveAndPassiveSkillDigit {
     int64 id = 1;           // Move id or Passive id
     int64 param1 = 2;
-    int64 param2 = 3;
+    string param2 = 3;
     int64 param3 = 4;
-    int64 param4 = 5;
+    string param4 = 5;
     int64 param5 = 6;
-    int64 param6 = 7;
+    string param6 = 7;
     int64 param7 = 8;
-    int64 param8 = 9;
+    string param8 = 9;
     int64 param9 = 10;
-    int64 param10 = 11;
+    string param10 = 11;
     int64 param11 = 12;
-    int64 param12 = 13;
+    string param12 = 13;
     int64 param13 = 14;
-    int64 param14 = 15;
+    string param14 = 15;
     int64 param15 = 16;
-    int64 param16 = 17;
+    string param16 = 17;
     int64 param17 = 18;
-    int64 param18 = 19;
+    string param18 = 19;
     int64 param19 = 20;
-    int64 param20 = 21;
+    string param20 = 21;
 }
 
 message MoveAndPassiveSkillDigitTable {

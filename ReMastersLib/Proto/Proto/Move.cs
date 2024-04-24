@@ -35,17 +35,17 @@ namespace ReMastersLib {
             "EiMKB2VudHJpZXMYASADKAsyEi5SZU1hc3RlcnNMaWIuTW92ZSpQCghDYXRl",
             "Z29yeRIOCgpOb0NhdGVnb3J5EAASDAoIUGh5c2ljYWwQARILCgdTcGVjaWFs",
             "EAISCgoGU3RhdHVzEAMSDQoJVW5pdHlNb3ZlEAQqIAoEVXNlchILCgdQb2tl",
-            "bW9uEAASCwoHVHJhaW5lchABKkEKBUdyb3VwEggKBE5vbmUQABIMCghVbmtu",
-            "b3duMRABEgsKB1JlZ3VsYXIQAhIICgRTeW5jEAMSCQoFVW5pdHkQBCqrAQoG",
-            "VGFyZ2V0Eg4KCkFsbHlTaW5nbGUQABILCgdBbGx5QWxsEAESEgoOT3Bwb25l",
-            "bnRTaW5nbGUQAhIPCgtPcHBvbmVudEFsbBADEggKBFNlbGYQBBIOCgpBbGx5",
-            "UmFuZG9tEAUSEgoOT3Bwb25lbnRSYW5kb20QBhINCglBbGx5RmllbGQQBxIR",
-            "Cg1PcHBvbmVudEZpZWxkEAgSDwoLRW50aXJlRmllbGQQCSrJAQoDVGFnEggK",
-            "BG5vbmUQABIQCgxGb3JjZWRTd2l0Y2gQARIQCgxTdWRkZW5Td2l0Y2gQAhIN",
-            "CglRdWlja01vdmUQBBILCgdTdXJlSGl0EAgSBgoCbmEQEBIRCg1Pa1doaWxl",
-            "RnJvemVuECASEAoMT2tXaGlsZVNsZWVwEEASFAoPT25seVdoaWxlQXNsZWVw",
-            "EIABEgoKBUhlYWxzEIACEgwKB0Fic29yYnMQgAQSDgoJQ29udGludWVzEIAI",
-            "EgsKBlJlY29pbBCAEGIGcHJvdG8z"));
+            "bW9uEAASCwoHVHJhaW5lchABKlkKBUdyb3VwEggKBE5vbmUQABIMCghVbmtu",
+            "b3duMRABEgsKB1JlZ3VsYXIQAhIICgRTeW5jEAMSCQoFVW5pdHkQBBILCgdN",
+            "YXhtb3ZlEAUSCQoFQnVkZHkQBiqrAQoGVGFyZ2V0Eg4KCkFsbHlTaW5nbGUQ",
+            "ABILCgdBbGx5QWxsEAESEgoOT3Bwb25lbnRTaW5nbGUQAhIPCgtPcHBvbmVu",
+            "dEFsbBADEggKBFNlbGYQBBIOCgpBbGx5UmFuZG9tEAUSEgoOT3Bwb25lbnRS",
+            "YW5kb20QBhINCglBbGx5RmllbGQQBxIRCg1PcHBvbmVudEZpZWxkEAgSDwoL",
+            "RW50aXJlRmllbGQQCSrJAQoDVGFnEggKBG5vbmUQABIQCgxGb3JjZWRTd2l0",
+            "Y2gQARIQCgxTdWRkZW5Td2l0Y2gQAhINCglRdWlja01vdmUQBBILCgdTdXJl",
+            "SGl0EAgSBgoCbmEQEBIRCg1Pa1doaWxlRnJvemVuECASEAoMT2tXaGlsZVNs",
+            "ZWVwEEASFAoPT25seVdoaWxlQXNsZWVwEIABEgoKBUhlYWxzEIACEgwKB0Fi",
+            "c29yYnMQgAQSDgoJQ29udGludWVzEIAIEgsKBlJlY29pbBCAEGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::ReMastersLib.Category), typeof(global::ReMastersLib.User), typeof(global::ReMastersLib.Group), typeof(global::ReMastersLib.Target), typeof(global::ReMastersLib.Tag), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -76,6 +76,8 @@ namespace ReMastersLib {
     [pbr::OriginalName("Regular")] Regular = 2,
     [pbr::OriginalName("Sync")] Sync = 3,
     [pbr::OriginalName("Unity")] Unity = 4,
+    [pbr::OriginalName("Maxmove")] Maxmove = 5,
+    [pbr::OriginalName("Buddy")] Buddy = 6,
   }
 
   public enum Target {

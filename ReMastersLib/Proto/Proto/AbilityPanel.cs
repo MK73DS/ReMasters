@@ -24,17 +24,18 @@ namespace ReMastersLib {
     static AbilityPanelReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChhQcm90by9BYmlsaXR5UGFuZWwucHJvdG8SDFJlTWFzdGVyc0xpYiK7AQoM",
-            "QWJpbGl0eVBhbmVsEg8KB2NlbGxfaWQYASABKAUSEgoKdHJhaW5lcl9pZBgC",
-            "IAEoAxITCgtlbmVyZ3lfY29zdBgDIAEoBRIQCghvcmJfY29zdBgEIAEoBRIJ",
-            "CgF4GAUgASgFEgkKAXkYBiABKAUSCQoBehgHIAEoBRISCgphYmlsaXR5X2lk",
-            "GAggASgDEhUKDWNvbmRpdGlvbl9pZHMYCSADKAUSEwoLc2NoZWR1bGVfaWQY",
-            "CiABKAkiQAoRQWJpbGl0eVBhbmVsVGFibGUSKwoHZW50cmllcxgBIAMoCzIa",
-            "LlJlTWFzdGVyc0xpYi5BYmlsaXR5UGFuZWxiBnByb3RvMw=="));
+            "ChhQcm90by9BYmlsaXR5UGFuZWwucHJvdG8SDFJlTWFzdGVyc0xpYiLMAQoM",
+            "QWJpbGl0eVBhbmVsEg8KB2NlbGxfaWQYASABKAUSDwoHdmVyc2lvbhgCIAEo",
+            "BRISCgp0cmFpbmVyX2lkGAMgASgDEhMKC2VuZXJneV9jb3N0GAQgASgFEhAK",
+            "CG9yYl9jb3N0GAUgASgFEgkKAXgYBiABKAUSCQoBeRgHIAEoBRIJCgF6GAgg",
+            "ASgFEhIKCmFiaWxpdHlfaWQYCSABKAMSFQoNY29uZGl0aW9uX2lkcxgKIAMo",
+            "BRITCgtzY2hlZHVsZV9pZBgLIAEoCSJAChFBYmlsaXR5UGFuZWxUYWJsZRIr",
+            "CgdlbnRyaWVzGAEgAygLMhouUmVNYXN0ZXJzTGliLkFiaWxpdHlQYW5lbGIG",
+            "cHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::ReMastersLib.AbilityPanel), global::ReMastersLib.AbilityPanel.Parser, new[]{ "CellId", "TrainerId", "EnergyCost", "OrbCost", "X", "Y", "Z", "AbilityId", "ConditionIds", "ScheduleId" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::ReMastersLib.AbilityPanel), global::ReMastersLib.AbilityPanel.Parser, new[]{ "CellId", "Version", "TrainerId", "EnergyCost", "OrbCost", "X", "Y", "Z", "AbilityId", "ConditionIds", "ScheduleId" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::ReMastersLib.AbilityPanelTable), global::ReMastersLib.AbilityPanelTable.Parser, new[]{ "Entries" }, null, null, null, null)
           }));
     }
@@ -77,6 +78,7 @@ namespace ReMastersLib {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public AbilityPanel(AbilityPanel other) : this() {
       cellId_ = other.cellId_;
+      version_ = other.version_;
       trainerId_ = other.trainerId_;
       energyCost_ = other.energyCost_;
       orbCost_ = other.orbCost_;
@@ -107,8 +109,20 @@ namespace ReMastersLib {
       }
     }
 
+    /// <summary>Field number for the "version" field.</summary>
+    public const int VersionFieldNumber = 2;
+    private int version_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int Version {
+      get { return version_; }
+      set {
+        version_ = value;
+      }
+    }
+
     /// <summary>Field number for the "trainer_id" field.</summary>
-    public const int TrainerIdFieldNumber = 2;
+    public const int TrainerIdFieldNumber = 3;
     private long trainerId_;
     /// <summary>
     /// Trainer.pb
@@ -123,7 +137,7 @@ namespace ReMastersLib {
     }
 
     /// <summary>Field number for the "energy_cost" field.</summary>
-    public const int EnergyCostFieldNumber = 3;
+    public const int EnergyCostFieldNumber = 4;
     private int energyCost_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -135,7 +149,7 @@ namespace ReMastersLib {
     }
 
     /// <summary>Field number for the "orb_cost" field.</summary>
-    public const int OrbCostFieldNumber = 4;
+    public const int OrbCostFieldNumber = 5;
     private int orbCost_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -147,7 +161,7 @@ namespace ReMastersLib {
     }
 
     /// <summary>Field number for the "x" field.</summary>
-    public const int XFieldNumber = 5;
+    public const int XFieldNumber = 6;
     private int x_;
     /// <summary>
     /// Hex grid coordinates
@@ -162,7 +176,7 @@ namespace ReMastersLib {
     }
 
     /// <summary>Field number for the "y" field.</summary>
-    public const int YFieldNumber = 6;
+    public const int YFieldNumber = 7;
     private int y_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -174,7 +188,7 @@ namespace ReMastersLib {
     }
 
     /// <summary>Field number for the "z" field.</summary>
-    public const int ZFieldNumber = 7;
+    public const int ZFieldNumber = 8;
     private int z_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -186,7 +200,7 @@ namespace ReMastersLib {
     }
 
     /// <summary>Field number for the "ability_id" field.</summary>
-    public const int AbilityIdFieldNumber = 8;
+    public const int AbilityIdFieldNumber = 9;
     private long abilityId_;
     /// <summary>
     /// Ability.pb
@@ -201,9 +215,9 @@ namespace ReMastersLib {
     }
 
     /// <summary>Field number for the "condition_ids" field.</summary>
-    public const int ConditionIdsFieldNumber = 9;
+    public const int ConditionIdsFieldNumber = 10;
     private static readonly pb::FieldCodec<int> _repeated_conditionIds_codec
-        = pb::FieldCodec.ForInt32(74);
+        = pb::FieldCodec.ForInt32(82);
     private readonly pbc::RepeatedField<int> conditionIds_ = new pbc::RepeatedField<int>();
     /// <summary>
     /// AbilityReleaseCondition.pb
@@ -215,7 +229,7 @@ namespace ReMastersLib {
     }
 
     /// <summary>Field number for the "schedule_id" field.</summary>
-    public const int ScheduleIdFieldNumber = 10;
+    public const int ScheduleIdFieldNumber = 11;
     private string scheduleId_ = "";
     /// <summary>
     /// Schedule.pb
@@ -245,6 +259,7 @@ namespace ReMastersLib {
         return true;
       }
       if (CellId != other.CellId) return false;
+      if (Version != other.Version) return false;
       if (TrainerId != other.TrainerId) return false;
       if (EnergyCost != other.EnergyCost) return false;
       if (OrbCost != other.OrbCost) return false;
@@ -262,6 +277,7 @@ namespace ReMastersLib {
     public override int GetHashCode() {
       int hash = 1;
       if (CellId != 0) hash ^= CellId.GetHashCode();
+      if (Version != 0) hash ^= Version.GetHashCode();
       if (TrainerId != 0L) hash ^= TrainerId.GetHashCode();
       if (EnergyCost != 0) hash ^= EnergyCost.GetHashCode();
       if (OrbCost != 0) hash ^= OrbCost.GetHashCode();
@@ -293,37 +309,41 @@ namespace ReMastersLib {
         output.WriteRawTag(8);
         output.WriteInt32(CellId);
       }
-      if (TrainerId != 0L) {
+      if (Version != 0) {
         output.WriteRawTag(16);
+        output.WriteInt32(Version);
+      }
+      if (TrainerId != 0L) {
+        output.WriteRawTag(24);
         output.WriteInt64(TrainerId);
       }
       if (EnergyCost != 0) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(32);
         output.WriteInt32(EnergyCost);
       }
       if (OrbCost != 0) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(40);
         output.WriteInt32(OrbCost);
       }
       if (X != 0) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(48);
         output.WriteInt32(X);
       }
       if (Y != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(56);
         output.WriteInt32(Y);
       }
       if (Z != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(64);
         output.WriteInt32(Z);
       }
       if (AbilityId != 0L) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(72);
         output.WriteInt64(AbilityId);
       }
       conditionIds_.WriteTo(output, _repeated_conditionIds_codec);
       if (ScheduleId.Length != 0) {
-        output.WriteRawTag(82);
+        output.WriteRawTag(90);
         output.WriteString(ScheduleId);
       }
       if (_unknownFields != null) {
@@ -340,37 +360,41 @@ namespace ReMastersLib {
         output.WriteRawTag(8);
         output.WriteInt32(CellId);
       }
-      if (TrainerId != 0L) {
+      if (Version != 0) {
         output.WriteRawTag(16);
+        output.WriteInt32(Version);
+      }
+      if (TrainerId != 0L) {
+        output.WriteRawTag(24);
         output.WriteInt64(TrainerId);
       }
       if (EnergyCost != 0) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(32);
         output.WriteInt32(EnergyCost);
       }
       if (OrbCost != 0) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(40);
         output.WriteInt32(OrbCost);
       }
       if (X != 0) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(48);
         output.WriteInt32(X);
       }
       if (Y != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(56);
         output.WriteInt32(Y);
       }
       if (Z != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(64);
         output.WriteInt32(Z);
       }
       if (AbilityId != 0L) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(72);
         output.WriteInt64(AbilityId);
       }
       conditionIds_.WriteTo(ref output, _repeated_conditionIds_codec);
       if (ScheduleId.Length != 0) {
-        output.WriteRawTag(82);
+        output.WriteRawTag(90);
         output.WriteString(ScheduleId);
       }
       if (_unknownFields != null) {
@@ -385,6 +409,9 @@ namespace ReMastersLib {
       int size = 0;
       if (CellId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(CellId);
+      }
+      if (Version != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Version);
       }
       if (TrainerId != 0L) {
         size += 1 + pb::CodedOutputStream.ComputeInt64Size(TrainerId);
@@ -425,6 +452,9 @@ namespace ReMastersLib {
       }
       if (other.CellId != 0) {
         CellId = other.CellId;
+      }
+      if (other.Version != 0) {
+        Version = other.Version;
       }
       if (other.TrainerId != 0L) {
         TrainerId = other.TrainerId;
@@ -471,39 +501,43 @@ namespace ReMastersLib {
             break;
           }
           case 16: {
-            TrainerId = input.ReadInt64();
+            Version = input.ReadInt32();
             break;
           }
           case 24: {
-            EnergyCost = input.ReadInt32();
+            TrainerId = input.ReadInt64();
             break;
           }
           case 32: {
-            OrbCost = input.ReadInt32();
+            EnergyCost = input.ReadInt32();
             break;
           }
           case 40: {
-            X = input.ReadInt32();
+            OrbCost = input.ReadInt32();
             break;
           }
           case 48: {
-            Y = input.ReadInt32();
+            X = input.ReadInt32();
             break;
           }
           case 56: {
-            Z = input.ReadInt32();
+            Y = input.ReadInt32();
             break;
           }
           case 64: {
+            Z = input.ReadInt32();
+            break;
+          }
+          case 72: {
             AbilityId = input.ReadInt64();
             break;
           }
-          case 74:
-          case 72: {
+          case 82:
+          case 80: {
             conditionIds_.AddEntriesFrom(input, _repeated_conditionIds_codec);
             break;
           }
-          case 82: {
+          case 90: {
             ScheduleId = input.ReadString();
             break;
           }
@@ -527,39 +561,43 @@ namespace ReMastersLib {
             break;
           }
           case 16: {
-            TrainerId = input.ReadInt64();
+            Version = input.ReadInt32();
             break;
           }
           case 24: {
-            EnergyCost = input.ReadInt32();
+            TrainerId = input.ReadInt64();
             break;
           }
           case 32: {
-            OrbCost = input.ReadInt32();
+            EnergyCost = input.ReadInt32();
             break;
           }
           case 40: {
-            X = input.ReadInt32();
+            OrbCost = input.ReadInt32();
             break;
           }
           case 48: {
-            Y = input.ReadInt32();
+            X = input.ReadInt32();
             break;
           }
           case 56: {
-            Z = input.ReadInt32();
+            Y = input.ReadInt32();
             break;
           }
           case 64: {
+            Z = input.ReadInt32();
+            break;
+          }
+          case 72: {
             AbilityId = input.ReadInt64();
             break;
           }
-          case 74:
-          case 72: {
+          case 82:
+          case 80: {
             conditionIds_.AddEntriesFrom(ref input, _repeated_conditionIds_codec);
             break;
           }
-          case 82: {
+          case 90: {
             ScheduleId = input.ReadString();
             break;
           }

@@ -25,26 +25,26 @@ namespace ReMastersLib {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChxQcm90by9Nb25zdGVyVmFyaWF0aW9uLnByb3RvEgxSZU1hc3RlcnNMaWIi",
-            "2AQKEE1vbnN0ZXJWYXJpYXRpb24SEgoKbW9uc3Rlcl9pZBgBIAEoBBIMCgRm",
+            "0gQKEE1vbnN0ZXJWYXJpYXRpb24SEgoKbW9uc3Rlcl9pZBgBIAEoBBIMCgRm",
             "b3JtGAIgASgNEhAKCGFjdG9yX2lkGAMgASgJEhEKCWF0a19zY2FsZRgEIAEo",
             "DRIRCglkZWZfc2NhbGUYBSABKA0SEQoJc3BhX3NjYWxlGAYgASgNEhEKCXNw",
             "ZF9zY2FsZRgHIAEoDRIRCglzcGVfc2NhbGUYCCABKA0SEQoJbW92ZV8xX2lk",
             "GAkgASgDEhEKCW1vdmVfMl9pZBgKIAEoAxIRCgltb3ZlXzNfaWQYCyABKAMS",
-            "EQoJbW92ZV80X2lkGAwgASgDEhEKCW1vdmVfNV9pZBgNIAEoAxIRCgltb3Zl",
-            "XzZfaWQYDiABKAMSFAoMcGFzc2l2ZV8xX2lkGA8gASgFEhQKDHBhc3NpdmVf",
-            "Ml9pZBgQIAEoBRIUCgxwYXNzaXZlXzNfaWQYESABKAUSCwoDdTE4GBIgASgF",
-            "EgsKA3UxORgTIAEoBRILCgN1MjAYFCABKAUSCwoDdTIxGBUgASgFEgsKA3Uy",
-            "MhgWIAEoBRILCgN1MjMYFyABKAUSCwoDdTI0GBggASgFEgsKA3UyNRgZIAEo",
-            "BRIPCgdmb3JtX2lkGBogASgFEgsKA3UyNxgbIAEoBRILCgN1MjgYHCABKAUS",
-            "GQoRbW92ZV9keW5hbWF4XzFfaWQYHSABKAUSGQoRbW92ZV9keW5hbWF4XzJf",
-            "aWQYHiABKAUSGQoRbW92ZV9keW5hbWF4XzNfaWQYHyABKAUSGQoRbW92ZV9k",
-            "eW5hbWF4XzRfaWQYICABKAUiSAoVTW9uc3RlclZhcmlhdGlvblRhYmxlEi8K",
-            "B2VudHJpZXMYASADKAsyHi5SZU1hc3RlcnNMaWIuTW9uc3RlclZhcmlhdGlv",
-            "bmIGcHJvdG8z"));
+            "EQoJbW92ZV80X2lkGAwgASgDEgwKBHR5cGUYDSABKAMSEAoId2Vha25lc3MY",
+            "DiABKAMSFAoMcGFzc2l2ZV8xX2lkGA8gASgFEhQKDHBhc3NpdmVfMl9pZBgQ",
+            "IAEoBRIUCgxwYXNzaXZlXzNfaWQYESABKAUSCwoDdTE4GBIgASgFEgsKA3Ux",
+            "ORgTIAEoBRILCgN1MjAYFCABKAUSCwoDdTIxGBUgASgFEgsKA3UyMhgWIAEo",
+            "BRILCgN1MjMYFyABKAUSCwoDdTI0GBggASgFEgsKA3UyNRgZIAEoBRIPCgdm",
+            "b3JtX2lkGBogASgFEgsKA3UyNxgbIAEoBRILCgN1MjgYHCABKAUSGQoRbW92",
+            "ZV9keW5hbWF4XzFfaWQYHSABKAUSGQoRbW92ZV9keW5hbWF4XzJfaWQYHiAB",
+            "KAUSGQoRbW92ZV9keW5hbWF4XzNfaWQYHyABKAUSGQoRbW92ZV9keW5hbWF4",
+            "XzRfaWQYICABKAUiSAoVTW9uc3RlclZhcmlhdGlvblRhYmxlEi8KB2VudHJp",
+            "ZXMYASADKAsyHi5SZU1hc3RlcnNMaWIuTW9uc3RlclZhcmlhdGlvbmIGcHJv",
+            "dG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::ReMastersLib.MonsterVariation), global::ReMastersLib.MonsterVariation.Parser, new[]{ "MonsterId", "Form", "ActorId", "AtkScale", "DefScale", "SpaScale", "SpdScale", "SpeScale", "Move1Id", "Move2Id", "Move3Id", "Move4Id", "Move5Id", "Move6Id", "Passive1Id", "Passive2Id", "Passive3Id", "U18", "U19", "U20", "U21", "U22", "U23", "U24", "U25", "FormId", "U27", "U28", "MoveDynamax1Id", "MoveDynamax2Id", "MoveDynamax3Id", "MoveDynamax4Id" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::ReMastersLib.MonsterVariation), global::ReMastersLib.MonsterVariation.Parser, new[]{ "MonsterId", "Form", "ActorId", "AtkScale", "DefScale", "SpaScale", "SpdScale", "SpeScale", "Move1Id", "Move2Id", "Move3Id", "Move4Id", "Type", "Weakness", "Passive1Id", "Passive2Id", "Passive3Id", "U18", "U19", "U20", "U21", "U22", "U23", "U24", "U25", "FormId", "U27", "U28", "MoveDynamax1Id", "MoveDynamax2Id", "MoveDynamax3Id", "MoveDynamax4Id" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::ReMastersLib.MonsterVariationTable), global::ReMastersLib.MonsterVariationTable.Parser, new[]{ "Entries" }, null, null, null, null)
           }));
     }
@@ -98,8 +98,8 @@ namespace ReMastersLib {
       move2Id_ = other.move2Id_;
       move3Id_ = other.move3Id_;
       move4Id_ = other.move4Id_;
-      move5Id_ = other.move5Id_;
-      move6Id_ = other.move6Id_;
+      type_ = other.type_;
+      weakness_ = other.weakness_;
       passive1Id_ = other.passive1Id_;
       passive2Id_ = other.passive2Id_;
       passive3Id_ = other.passive3Id_;
@@ -274,27 +274,27 @@ namespace ReMastersLib {
       }
     }
 
-    /// <summary>Field number for the "move_5_id" field.</summary>
-    public const int Move5IdFieldNumber = 13;
-    private long move5Id_;
+    /// <summary>Field number for the "type" field.</summary>
+    public const int TypeFieldNumber = 13;
+    private long type_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public long Move5Id {
-      get { return move5Id_; }
+    public long Type {
+      get { return type_; }
       set {
-        move5Id_ = value;
+        type_ = value;
       }
     }
 
-    /// <summary>Field number for the "move_6_id" field.</summary>
-    public const int Move6IdFieldNumber = 14;
-    private long move6Id_;
+    /// <summary>Field number for the "weakness" field.</summary>
+    public const int WeaknessFieldNumber = 14;
+    private long weakness_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public long Move6Id {
-      get { return move6Id_; }
+    public long Weakness {
+      get { return weakness_; }
       set {
-        move6Id_ = value;
+        weakness_ = value;
       }
     }
 
@@ -544,8 +544,8 @@ namespace ReMastersLib {
       if (Move2Id != other.Move2Id) return false;
       if (Move3Id != other.Move3Id) return false;
       if (Move4Id != other.Move4Id) return false;
-      if (Move5Id != other.Move5Id) return false;
-      if (Move6Id != other.Move6Id) return false;
+      if (Type != other.Type) return false;
+      if (Weakness != other.Weakness) return false;
       if (Passive1Id != other.Passive1Id) return false;
       if (Passive2Id != other.Passive2Id) return false;
       if (Passive3Id != other.Passive3Id) return false;
@@ -583,8 +583,8 @@ namespace ReMastersLib {
       if (Move2Id != 0L) hash ^= Move2Id.GetHashCode();
       if (Move3Id != 0L) hash ^= Move3Id.GetHashCode();
       if (Move4Id != 0L) hash ^= Move4Id.GetHashCode();
-      if (Move5Id != 0L) hash ^= Move5Id.GetHashCode();
-      if (Move6Id != 0L) hash ^= Move6Id.GetHashCode();
+      if (Type != 0L) hash ^= Type.GetHashCode();
+      if (Weakness != 0L) hash ^= Weakness.GetHashCode();
       if (Passive1Id != 0) hash ^= Passive1Id.GetHashCode();
       if (Passive2Id != 0) hash ^= Passive2Id.GetHashCode();
       if (Passive3Id != 0) hash ^= Passive3Id.GetHashCode();
@@ -669,13 +669,13 @@ namespace ReMastersLib {
         output.WriteRawTag(96);
         output.WriteInt64(Move4Id);
       }
-      if (Move5Id != 0L) {
+      if (Type != 0L) {
         output.WriteRawTag(104);
-        output.WriteInt64(Move5Id);
+        output.WriteInt64(Type);
       }
-      if (Move6Id != 0L) {
+      if (Weakness != 0L) {
         output.WriteRawTag(112);
-        output.WriteInt64(Move6Id);
+        output.WriteInt64(Weakness);
       }
       if (Passive1Id != 0) {
         output.WriteRawTag(120);
@@ -807,13 +807,13 @@ namespace ReMastersLib {
         output.WriteRawTag(96);
         output.WriteInt64(Move4Id);
       }
-      if (Move5Id != 0L) {
+      if (Type != 0L) {
         output.WriteRawTag(104);
-        output.WriteInt64(Move5Id);
+        output.WriteInt64(Type);
       }
-      if (Move6Id != 0L) {
+      if (Weakness != 0L) {
         output.WriteRawTag(112);
-        output.WriteInt64(Move6Id);
+        output.WriteInt64(Weakness);
       }
       if (Passive1Id != 0) {
         output.WriteRawTag(120);
@@ -933,11 +933,11 @@ namespace ReMastersLib {
       if (Move4Id != 0L) {
         size += 1 + pb::CodedOutputStream.ComputeInt64Size(Move4Id);
       }
-      if (Move5Id != 0L) {
-        size += 1 + pb::CodedOutputStream.ComputeInt64Size(Move5Id);
+      if (Type != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(Type);
       }
-      if (Move6Id != 0L) {
-        size += 1 + pb::CodedOutputStream.ComputeInt64Size(Move6Id);
+      if (Weakness != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(Weakness);
       }
       if (Passive1Id != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Passive1Id);
@@ -1041,11 +1041,11 @@ namespace ReMastersLib {
       if (other.Move4Id != 0L) {
         Move4Id = other.Move4Id;
       }
-      if (other.Move5Id != 0L) {
-        Move5Id = other.Move5Id;
+      if (other.Type != 0L) {
+        Type = other.Type;
       }
-      if (other.Move6Id != 0L) {
-        Move6Id = other.Move6Id;
+      if (other.Weakness != 0L) {
+        Weakness = other.Weakness;
       }
       if (other.Passive1Id != 0) {
         Passive1Id = other.Passive1Id;
@@ -1165,11 +1165,11 @@ namespace ReMastersLib {
             break;
           }
           case 104: {
-            Move5Id = input.ReadInt64();
+            Type = input.ReadInt64();
             break;
           }
           case 112: {
-            Move6Id = input.ReadInt64();
+            Weakness = input.ReadInt64();
             break;
           }
           case 120: {
@@ -1308,11 +1308,11 @@ namespace ReMastersLib {
             break;
           }
           case 104: {
-            Move5Id = input.ReadInt64();
+            Type = input.ReadInt64();
             break;
           }
           case 112: {
-            Move6Id = input.ReadInt64();
+            Weakness = input.ReadInt64();
             break;
           }
           case 120: {

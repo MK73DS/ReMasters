@@ -24,16 +24,17 @@ namespace ReMastersLib {
     static ScoutReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChFQcm90by9TY291dC5wcm90bxIMUmVNYXN0ZXJzTGliIpkBCgVTY291dBIQ",
-            "CghzY291dF9pZBgBIAEoCRIYChBiYW5uZXJfaWRfc3RyaW5nGAIgASgJEgwK",
-            "BHR5cGUYAyABKA0SEwoLc2NoZWR1bGVfaWQYBCABKAkSCgoCdTUYBSABKAQS",
-            "CgoCdTYYBiABKA0SCgoCdTcYByABKA0SEQoJYmFubmVyX2lkGAggASgNEgoK",
-            "AnU5GAkgASgJIjIKClNjb3V0VGFibGUSJAoHZW50cmllcxgBIAMoCzITLlJl",
-            "TWFzdGVyc0xpYi5TY291dGIGcHJvdG8z"));
+            "ChFQcm90by9TY291dC5wcm90bxIMUmVNYXN0ZXJzTGliIrcBCgVTY291dBIQ",
+            "CghzY291dF9pZBgBIAEoCRIYChBiYW5uZXJfaWRfc3RyaW5nGAIgASgJEhwK",
+            "FHBpY2t1cF9uYW1lX292ZXJyaWRlGAMgASgJEgwKBHR5cGUYBCABKA0SEwoL",
+            "c2NoZWR1bGVfaWQYBSABKAkSCgoCdTUYBiABKAQSCgoCdTYYByABKA0SCgoC",
+            "dTcYCCABKA0SEQoJYmFubmVyX2lkGAkgASgNEgoKAnU5GAogASgJIjIKClNj",
+            "b3V0VGFibGUSJAoHZW50cmllcxgBIAMoCzITLlJlTWFzdGVyc0xpYi5TY291",
+            "dGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::ReMastersLib.Scout), global::ReMastersLib.Scout.Parser, new[]{ "ScoutId", "BannerIdString", "Type", "ScheduleId", "U5", "U6", "U7", "BannerId", "U9" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::ReMastersLib.Scout), global::ReMastersLib.Scout.Parser, new[]{ "ScoutId", "BannerIdString", "PickupNameOverride", "Type", "ScheduleId", "U5", "U6", "U7", "BannerId", "U9" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::ReMastersLib.ScoutTable), global::ReMastersLib.ScoutTable.Parser, new[]{ "Entries" }, null, null, null, null)
           }));
     }
@@ -77,6 +78,7 @@ namespace ReMastersLib {
     public Scout(Scout other) : this() {
       scoutId_ = other.scoutId_;
       bannerIdString_ = other.bannerIdString_;
+      pickupNameOverride_ = other.pickupNameOverride_;
       type_ = other.type_;
       scheduleId_ = other.scheduleId_;
       u5_ = other.u5_;
@@ -120,8 +122,20 @@ namespace ReMastersLib {
       }
     }
 
+    /// <summary>Field number for the "pickup_name_override" field.</summary>
+    public const int PickupNameOverrideFieldNumber = 3;
+    private string pickupNameOverride_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string PickupNameOverride {
+      get { return pickupNameOverride_; }
+      set {
+        pickupNameOverride_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     /// <summary>Field number for the "type" field.</summary>
-    public const int TypeFieldNumber = 3;
+    public const int TypeFieldNumber = 4;
     private uint type_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -133,7 +147,7 @@ namespace ReMastersLib {
     }
 
     /// <summary>Field number for the "schedule_id" field.</summary>
-    public const int ScheduleIdFieldNumber = 4;
+    public const int ScheduleIdFieldNumber = 5;
     private string scheduleId_ = "";
     /// <summary>
     ///
@@ -155,7 +169,7 @@ namespace ReMastersLib {
     }
 
     /// <summary>Field number for the "u5" field.</summary>
-    public const int U5FieldNumber = 5;
+    public const int U5FieldNumber = 6;
     private ulong u5_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -167,7 +181,7 @@ namespace ReMastersLib {
     }
 
     /// <summary>Field number for the "u6" field.</summary>
-    public const int U6FieldNumber = 6;
+    public const int U6FieldNumber = 7;
     private uint u6_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -179,7 +193,7 @@ namespace ReMastersLib {
     }
 
     /// <summary>Field number for the "u7" field.</summary>
-    public const int U7FieldNumber = 7;
+    public const int U7FieldNumber = 8;
     private uint u7_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -191,7 +205,7 @@ namespace ReMastersLib {
     }
 
     /// <summary>Field number for the "banner_id" field.</summary>
-    public const int BannerIdFieldNumber = 8;
+    public const int BannerIdFieldNumber = 9;
     private uint bannerId_;
     /// <summary>
     /// Banner.pb
@@ -206,7 +220,7 @@ namespace ReMastersLib {
     }
 
     /// <summary>Field number for the "u9" field.</summary>
-    public const int U9FieldNumber = 9;
+    public const int U9FieldNumber = 10;
     private string u9_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -234,6 +248,7 @@ namespace ReMastersLib {
       }
       if (ScoutId != other.ScoutId) return false;
       if (BannerIdString != other.BannerIdString) return false;
+      if (PickupNameOverride != other.PickupNameOverride) return false;
       if (Type != other.Type) return false;
       if (ScheduleId != other.ScheduleId) return false;
       if (U5 != other.U5) return false;
@@ -250,6 +265,7 @@ namespace ReMastersLib {
       int hash = 1;
       if (ScoutId.Length != 0) hash ^= ScoutId.GetHashCode();
       if (BannerIdString.Length != 0) hash ^= BannerIdString.GetHashCode();
+      if (PickupNameOverride.Length != 0) hash ^= PickupNameOverride.GetHashCode();
       if (Type != 0) hash ^= Type.GetHashCode();
       if (ScheduleId.Length != 0) hash ^= ScheduleId.GetHashCode();
       if (U5 != 0UL) hash ^= U5.GetHashCode();
@@ -283,32 +299,36 @@ namespace ReMastersLib {
         output.WriteRawTag(18);
         output.WriteString(BannerIdString);
       }
+      if (PickupNameOverride.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(PickupNameOverride);
+      }
       if (Type != 0) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(32);
         output.WriteUInt32(Type);
       }
       if (ScheduleId.Length != 0) {
-        output.WriteRawTag(34);
+        output.WriteRawTag(42);
         output.WriteString(ScheduleId);
       }
       if (U5 != 0UL) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(48);
         output.WriteUInt64(U5);
       }
       if (U6 != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(56);
         output.WriteUInt32(U6);
       }
       if (U7 != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(64);
         output.WriteUInt32(U7);
       }
       if (BannerId != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(72);
         output.WriteUInt32(BannerId);
       }
       if (U9.Length != 0) {
-        output.WriteRawTag(74);
+        output.WriteRawTag(82);
         output.WriteString(U9);
       }
       if (_unknownFields != null) {
@@ -329,32 +349,36 @@ namespace ReMastersLib {
         output.WriteRawTag(18);
         output.WriteString(BannerIdString);
       }
+      if (PickupNameOverride.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(PickupNameOverride);
+      }
       if (Type != 0) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(32);
         output.WriteUInt32(Type);
       }
       if (ScheduleId.Length != 0) {
-        output.WriteRawTag(34);
+        output.WriteRawTag(42);
         output.WriteString(ScheduleId);
       }
       if (U5 != 0UL) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(48);
         output.WriteUInt64(U5);
       }
       if (U6 != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(56);
         output.WriteUInt32(U6);
       }
       if (U7 != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(64);
         output.WriteUInt32(U7);
       }
       if (BannerId != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(72);
         output.WriteUInt32(BannerId);
       }
       if (U9.Length != 0) {
-        output.WriteRawTag(74);
+        output.WriteRawTag(82);
         output.WriteString(U9);
       }
       if (_unknownFields != null) {
@@ -372,6 +396,9 @@ namespace ReMastersLib {
       }
       if (BannerIdString.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(BannerIdString);
+      }
+      if (PickupNameOverride.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(PickupNameOverride);
       }
       if (Type != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Type);
@@ -411,6 +438,9 @@ namespace ReMastersLib {
       }
       if (other.BannerIdString.Length != 0) {
         BannerIdString = other.BannerIdString;
+      }
+      if (other.PickupNameOverride.Length != 0) {
+        PickupNameOverride = other.PickupNameOverride;
       }
       if (other.Type != 0) {
         Type = other.Type;
@@ -456,31 +486,35 @@ namespace ReMastersLib {
             BannerIdString = input.ReadString();
             break;
           }
-          case 24: {
+          case 26: {
+            PickupNameOverride = input.ReadString();
+            break;
+          }
+          case 32: {
             Type = input.ReadUInt32();
             break;
           }
-          case 34: {
+          case 42: {
             ScheduleId = input.ReadString();
             break;
           }
-          case 40: {
+          case 48: {
             U5 = input.ReadUInt64();
             break;
           }
-          case 48: {
+          case 56: {
             U6 = input.ReadUInt32();
             break;
           }
-          case 56: {
+          case 64: {
             U7 = input.ReadUInt32();
             break;
           }
-          case 64: {
+          case 72: {
             BannerId = input.ReadUInt32();
             break;
           }
-          case 74: {
+          case 82: {
             U9 = input.ReadString();
             break;
           }
@@ -507,31 +541,35 @@ namespace ReMastersLib {
             BannerIdString = input.ReadString();
             break;
           }
-          case 24: {
+          case 26: {
+            PickupNameOverride = input.ReadString();
+            break;
+          }
+          case 32: {
             Type = input.ReadUInt32();
             break;
           }
-          case 34: {
+          case 42: {
             ScheduleId = input.ReadString();
             break;
           }
-          case 40: {
+          case 48: {
             U5 = input.ReadUInt64();
             break;
           }
-          case 48: {
+          case 56: {
             U6 = input.ReadUInt32();
             break;
           }
-          case 56: {
+          case 64: {
             U7 = input.ReadUInt32();
             break;
           }
-          case 64: {
+          case 72: {
             BannerId = input.ReadUInt32();
             break;
           }
-          case 74: {
+          case 82: {
             U9 = input.ReadString();
             break;
           }
