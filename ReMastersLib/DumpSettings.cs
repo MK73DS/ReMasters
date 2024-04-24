@@ -103,18 +103,18 @@ namespace ReMastersLib
             Console.WriteLine("Copying image files to output directory...");
             foreach (string file in images)
             {
-                DirectoryInfo outDir = Directory.CreateDirectory(Path.GetDirectoryName(file).Replace(Paths.OutputPath, outPath));
-                File.Copy(file, Path.Combine(outDir.FullName, Path.GetFileName(file)), true);
+                DirectoryInfo outDir = Directory.CreateDirectory(Path.Combine(outPath, Path.GetDirectoryName(file) ?? "/"));
+                File.Copy(Path.Combine(Paths.OutputPath, file), Path.Combine(outDir.FullName, Path.GetFileName(file)), true);
             }
 
             //Conversion et copie des fichiers ktx
             Console.WriteLine("Converting and copying texture files to output directory...");
             foreach (string file in files)
             {
-                DirectoryInfo outDir = Directory.CreateDirectory(Path.GetDirectoryName(file).Replace(Paths.OutputPath, outPath));
+                DirectoryInfo outDir = Directory.CreateDirectory(Path.Combine(outPath, Path.GetDirectoryName(file) ?? "/"));
                 string fileName = Path.GetFileNameWithoutExtension(file) + ".png";
 
-                Process.Start(Paths.KTXConverterPath, "-i " + file + " -f r8g8b8a8 -d " + Path.Combine(outDir.FullName, fileName))
+                Process.Start(Paths.KTXConverterPath, "-i " + Path.Combine(Paths.OutputPath, file) + " -f r8g8b8a8 -d " + Path.Combine(outDir.FullName, fileName))
                     ?.WaitForExit();
             }
         }
