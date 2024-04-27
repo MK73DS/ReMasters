@@ -18,7 +18,7 @@ message TrainerBase {
     string battle_bgm_id = 11;
     string result_bgm_id = 12;
 
-    string u13 = 13;
+    string alt_trainer_name_id = 13;    // trainer_name_xx.lsd
 }
 
 message TrainerBaseTable {
