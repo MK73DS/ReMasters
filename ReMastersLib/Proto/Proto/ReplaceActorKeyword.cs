@@ -25,15 +25,15 @@ namespace ReMastersLib {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ch9Qcm90by9SZXBsYWNlQWN0b3JLZXl3b3JkLnByb3RvEgxSZU1hc3RlcnNM",
-            "aWIibAoTUmVwbGFjZUFjdG9yS2V5d29yZBIXCg9yZXBsYWNlZEFjdG9ySWQY",
-            "ASABKAkSGAoQcmVwbGFjaW5nQWN0b3JJZBgCIAEoCRIKCgJ1MxgDIAEoBRIK",
-            "CgJ1NBgEIAEoBRIKCgJ1NRgFIAEoBSJOChhSZXBsYWNlQWN0b3JLZXl3b3Jk",
-            "VGFibGUSMgoHZW50cmllcxgBIAMoCzIhLlJlTWFzdGVyc0xpYi5SZXBsYWNl",
-            "QWN0b3JLZXl3b3JkYgZwcm90bzM="));
+            "aWIifwoTUmVwbGFjZUFjdG9yS2V5d29yZBIXCg9yZXBsYWNlZEFjdG9ySWQY",
+            "ASABKAkSGAoQcmVwbGFjaW5nQWN0b3JJZBgCIAEoCRIdChV1c2VHZW5lcmlj",
+            "SWZBdmFpbGFibGUYAyABKAgSCgoCdTQYBCABKAUSCgoCdTUYBSABKAUiTgoY",
+            "UmVwbGFjZUFjdG9yS2V5d29yZFRhYmxlEjIKB2VudHJpZXMYASADKAsyIS5S",
+            "ZU1hc3RlcnNMaWIuUmVwbGFjZUFjdG9yS2V5d29yZGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::ReMastersLib.ReplaceActorKeyword), global::ReMastersLib.ReplaceActorKeyword.Parser, new[]{ "ReplacedActorId", "ReplacingActorId", "U3", "U4", "U5" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::ReMastersLib.ReplaceActorKeyword), global::ReMastersLib.ReplaceActorKeyword.Parser, new[]{ "ReplacedActorId", "ReplacingActorId", "UseGenericIfAvailable", "U4", "U5" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::ReMastersLib.ReplaceActorKeywordTable), global::ReMastersLib.ReplaceActorKeywordTable.Parser, new[]{ "Entries" }, null, null, null, null)
           }));
     }
@@ -77,7 +77,7 @@ namespace ReMastersLib {
     public ReplaceActorKeyword(ReplaceActorKeyword other) : this() {
       replacedActorId_ = other.replacedActorId_;
       replacingActorId_ = other.replacingActorId_;
-      u3_ = other.u3_;
+      useGenericIfAvailable_ = other.useGenericIfAvailable_;
       u4_ = other.u4_;
       u5_ = other.u5_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
@@ -113,15 +113,15 @@ namespace ReMastersLib {
       }
     }
 
-    /// <summary>Field number for the "u3" field.</summary>
-    public const int U3FieldNumber = 3;
-    private int u3_;
+    /// <summary>Field number for the "useGenericIfAvailable" field.</summary>
+    public const int UseGenericIfAvailableFieldNumber = 3;
+    private bool useGenericIfAvailable_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int U3 {
-      get { return u3_; }
+    public bool UseGenericIfAvailable {
+      get { return useGenericIfAvailable_; }
       set {
-        u3_ = value;
+        useGenericIfAvailable_ = value;
       }
     }
 
@@ -166,7 +166,7 @@ namespace ReMastersLib {
       }
       if (ReplacedActorId != other.ReplacedActorId) return false;
       if (ReplacingActorId != other.ReplacingActorId) return false;
-      if (U3 != other.U3) return false;
+      if (UseGenericIfAvailable != other.UseGenericIfAvailable) return false;
       if (U4 != other.U4) return false;
       if (U5 != other.U5) return false;
       return Equals(_unknownFields, other._unknownFields);
@@ -178,7 +178,7 @@ namespace ReMastersLib {
       int hash = 1;
       if (ReplacedActorId.Length != 0) hash ^= ReplacedActorId.GetHashCode();
       if (ReplacingActorId.Length != 0) hash ^= ReplacingActorId.GetHashCode();
-      if (U3 != 0) hash ^= U3.GetHashCode();
+      if (UseGenericIfAvailable != false) hash ^= UseGenericIfAvailable.GetHashCode();
       if (U4 != 0) hash ^= U4.GetHashCode();
       if (U5 != 0) hash ^= U5.GetHashCode();
       if (_unknownFields != null) {
@@ -207,9 +207,9 @@ namespace ReMastersLib {
         output.WriteRawTag(18);
         output.WriteString(ReplacingActorId);
       }
-      if (U3 != 0) {
+      if (UseGenericIfAvailable != false) {
         output.WriteRawTag(24);
-        output.WriteInt32(U3);
+        output.WriteBool(UseGenericIfAvailable);
       }
       if (U4 != 0) {
         output.WriteRawTag(32);
@@ -237,9 +237,9 @@ namespace ReMastersLib {
         output.WriteRawTag(18);
         output.WriteString(ReplacingActorId);
       }
-      if (U3 != 0) {
+      if (UseGenericIfAvailable != false) {
         output.WriteRawTag(24);
-        output.WriteInt32(U3);
+        output.WriteBool(UseGenericIfAvailable);
       }
       if (U4 != 0) {
         output.WriteRawTag(32);
@@ -265,8 +265,8 @@ namespace ReMastersLib {
       if (ReplacingActorId.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(ReplacingActorId);
       }
-      if (U3 != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(U3);
+      if (UseGenericIfAvailable != false) {
+        size += 1 + 1;
       }
       if (U4 != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(U4);
@@ -292,8 +292,8 @@ namespace ReMastersLib {
       if (other.ReplacingActorId.Length != 0) {
         ReplacingActorId = other.ReplacingActorId;
       }
-      if (other.U3 != 0) {
-        U3 = other.U3;
+      if (other.UseGenericIfAvailable != false) {
+        UseGenericIfAvailable = other.UseGenericIfAvailable;
       }
       if (other.U4 != 0) {
         U4 = other.U4;
@@ -325,7 +325,7 @@ namespace ReMastersLib {
             break;
           }
           case 24: {
-            U3 = input.ReadInt32();
+            UseGenericIfAvailable = input.ReadBool();
             break;
           }
           case 32: {
@@ -360,7 +360,7 @@ namespace ReMastersLib {
             break;
           }
           case 24: {
-            U3 = input.ReadInt32();
+            UseGenericIfAvailable = input.ReadBool();
             break;
           }
           case 32: {

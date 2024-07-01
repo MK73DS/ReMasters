@@ -25,16 +25,17 @@ namespace ReMastersLib {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CjFQcm90by9Ta2lsbERlY2tJdGVtQ29uZGl0aW9uVGVhbVNraWxsVGFnTG90",
-            "LnByb3RvEgxSZU1hc3RlcnNMaWIieAolU2tpbGxEZWNrSXRlbUNvbmRpdGlv",
-            "blRlYW1Ta2lsbFRhZ0xvdBIKCgJ1MRgBIAEoAxIWCg50ZWFtU2tpbGxUYWdJ",
-            "ZBgCIAEoBRIKCgJ1MhgDIAEoCRIKCgJ1MxgEIAEoCRITCgtzY2hlZHVsZV9p",
-            "ZBgFIAEoCSJyCipTa2lsbERlY2tJdGVtQ29uZGl0aW9uVGVhbVNraWxsVGFn",
-            "TG90VGFibGUSRAoHZW50cmllcxgBIAMoCzIzLlJlTWFzdGVyc0xpYi5Ta2ls",
-            "bERlY2tJdGVtQ29uZGl0aW9uVGVhbVNraWxsVGFnTG90YgZwcm90bzM="));
+            "LnByb3RvEgxSZU1hc3RlcnNMaWIifwolU2tpbGxEZWNrSXRlbUNvbmRpdGlv",
+            "blRlYW1Ta2lsbFRhZ0xvdBIOCgZzZXRfaWQYASABKAMSGQoRdGVhbV9za2ls",
+            "bF90YWdfaWQYAiABKAUSCgoCdTIYAyABKAkSCgoCdTMYBCABKAkSEwoLc2No",
+            "ZWR1bGVfaWQYBSABKAkicgoqU2tpbGxEZWNrSXRlbUNvbmRpdGlvblRlYW1T",
+            "a2lsbFRhZ0xvdFRhYmxlEkQKB2VudHJpZXMYASADKAsyMy5SZU1hc3RlcnNM",
+            "aWIuU2tpbGxEZWNrSXRlbUNvbmRpdGlvblRlYW1Ta2lsbFRhZ0xvdGIGcHJv",
+            "dG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::ReMastersLib.SkillDeckItemConditionTeamSkillTagLot), global::ReMastersLib.SkillDeckItemConditionTeamSkillTagLot.Parser, new[]{ "U1", "TeamSkillTagId", "U2", "U3", "ScheduleId" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::ReMastersLib.SkillDeckItemConditionTeamSkillTagLot), global::ReMastersLib.SkillDeckItemConditionTeamSkillTagLot.Parser, new[]{ "SetId", "TeamSkillTagId", "U2", "U3", "ScheduleId" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::ReMastersLib.SkillDeckItemConditionTeamSkillTagLotTable), global::ReMastersLib.SkillDeckItemConditionTeamSkillTagLotTable.Parser, new[]{ "Entries" }, null, null, null, null)
           }));
     }
@@ -76,7 +77,7 @@ namespace ReMastersLib {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public SkillDeckItemConditionTeamSkillTagLot(SkillDeckItemConditionTeamSkillTagLot other) : this() {
-      u1_ = other.u1_;
+      setId_ = other.setId_;
       teamSkillTagId_ = other.teamSkillTagId_;
       u2_ = other.u2_;
       u3_ = other.u3_;
@@ -90,19 +91,19 @@ namespace ReMastersLib {
       return new SkillDeckItemConditionTeamSkillTagLot(this);
     }
 
-    /// <summary>Field number for the "u1" field.</summary>
-    public const int U1FieldNumber = 1;
-    private long u1_;
+    /// <summary>Field number for the "set_id" field.</summary>
+    public const int SetIdFieldNumber = 1;
+    private long setId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public long U1 {
-      get { return u1_; }
+    public long SetId {
+      get { return setId_; }
       set {
-        u1_ = value;
+        setId_ = value;
       }
     }
 
-    /// <summary>Field number for the "teamSkillTagId" field.</summary>
+    /// <summary>Field number for the "team_skill_tag_id" field.</summary>
     public const int TeamSkillTagIdFieldNumber = 2;
     private int teamSkillTagId_;
     /// <summary>
@@ -171,7 +172,7 @@ namespace ReMastersLib {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (U1 != other.U1) return false;
+      if (SetId != other.SetId) return false;
       if (TeamSkillTagId != other.TeamSkillTagId) return false;
       if (U2 != other.U2) return false;
       if (U3 != other.U3) return false;
@@ -183,7 +184,7 @@ namespace ReMastersLib {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (U1 != 0L) hash ^= U1.GetHashCode();
+      if (SetId != 0L) hash ^= SetId.GetHashCode();
       if (TeamSkillTagId != 0) hash ^= TeamSkillTagId.GetHashCode();
       if (U2.Length != 0) hash ^= U2.GetHashCode();
       if (U3.Length != 0) hash ^= U3.GetHashCode();
@@ -206,9 +207,9 @@ namespace ReMastersLib {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (U1 != 0L) {
+      if (SetId != 0L) {
         output.WriteRawTag(8);
-        output.WriteInt64(U1);
+        output.WriteInt64(SetId);
       }
       if (TeamSkillTagId != 0) {
         output.WriteRawTag(16);
@@ -236,9 +237,9 @@ namespace ReMastersLib {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (U1 != 0L) {
+      if (SetId != 0L) {
         output.WriteRawTag(8);
-        output.WriteInt64(U1);
+        output.WriteInt64(SetId);
       }
       if (TeamSkillTagId != 0) {
         output.WriteRawTag(16);
@@ -266,8 +267,8 @@ namespace ReMastersLib {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (U1 != 0L) {
-        size += 1 + pb::CodedOutputStream.ComputeInt64Size(U1);
+      if (SetId != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(SetId);
       }
       if (TeamSkillTagId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(TeamSkillTagId);
@@ -293,8 +294,8 @@ namespace ReMastersLib {
       if (other == null) {
         return;
       }
-      if (other.U1 != 0L) {
-        U1 = other.U1;
+      if (other.SetId != 0L) {
+        SetId = other.SetId;
       }
       if (other.TeamSkillTagId != 0) {
         TeamSkillTagId = other.TeamSkillTagId;
@@ -324,7 +325,7 @@ namespace ReMastersLib {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            U1 = input.ReadInt64();
+            SetId = input.ReadInt64();
             break;
           }
           case 16: {
@@ -359,7 +360,7 @@ namespace ReMastersLib {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 8: {
-            U1 = input.ReadInt64();
+            SetId = input.ReadInt64();
             break;
           }
           case 16: {

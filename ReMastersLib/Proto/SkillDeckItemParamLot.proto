@@ -1,0 +1,19 @@
+﻿syntax = "proto3";
+import "DeckItem.proto";
+import "SkillDeckItemLotParamCoefficient.proto";
+
+package ReMastersLib;
+
+message SkillDeckItemParamLot {
+  int32 skill_deck_item_num_lot = 1;  // SkillDeckItemNumLot.pb
+  EquipmentTypes equipment_type = 2;
+  Stat stat = 3;
+  int32 entry_weight = 4;
+  int32 min_stat = 5;
+  int32 max_stat = 6;
+  bool is_priority = 7;
+}
+
+message SkillDeckItemParamLotTable {
+  repeated SkillDeckItemParamLot entries = 1;
+}
