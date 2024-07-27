@@ -24,18 +24,17 @@ namespace ReMastersLib {
     static SkillDeckItemParamLotReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChtTa2lsbERlY2tJdGVtUGFyYW1Mb3QucHJvdG8SDFJlTWFzdGVyc0xpYhoO",
-            "RGVja0l0ZW0ucHJvdG8aJlNraWxsRGVja0l0ZW1Mb3RQYXJhbUNvZWZmaWNp",
-            "ZW50LnByb3RvIt8BChVTa2lsbERlY2tJdGVtUGFyYW1Mb3QSHwoXc2tpbGxf",
-            "ZGVja19pdGVtX251bV9sb3QYASABKAUSNAoOZXF1aXBtZW50X3R5cGUYAiAB",
-            "KA4yHC5SZU1hc3RlcnNMaWIuRXF1aXBtZW50VHlwZXMSIAoEc3RhdBgDIAEo",
-            "DjISLlJlTWFzdGVyc0xpYi5TdGF0EhQKDGVudHJ5X3dlaWdodBgEIAEoBRIQ",
-            "CghtaW5fc3RhdBgFIAEoBRIQCghtYXhfc3RhdBgGIAEoBRITCgtpc19wcmlv",
-            "cml0eRgHIAEoCCJSChpTa2lsbERlY2tJdGVtUGFyYW1Mb3RUYWJsZRI0Cgdl",
-            "bnRyaWVzGAEgAygLMiMuUmVNYXN0ZXJzTGliLlNraWxsRGVja0l0ZW1QYXJh",
-            "bUxvdGIGcHJvdG8z"));
+            "ChtTa2lsbERlY2tJdGVtUGFyYW1Mb3QucHJvdG8SDFJlTWFzdGVyc0xpYhoU",
+            "RXF1aXBtZW50VHlwZXMucHJvdG8aC1N0YXRzLnByb3RvIt8BChVTa2lsbERl",
+            "Y2tJdGVtUGFyYW1Mb3QSHwoXc2tpbGxfZGVja19pdGVtX251bV9sb3QYASAB",
+            "KAUSNAoOZXF1aXBtZW50X3R5cGUYAiABKA4yHC5SZU1hc3RlcnNMaWIuRXF1",
+            "aXBtZW50VHlwZXMSIAoEc3RhdBgDIAEoDjISLlJlTWFzdGVyc0xpYi5TdGF0",
+            "EhQKDGVudHJ5X3dlaWdodBgEIAEoBRIQCghtaW5fc3RhdBgFIAEoBRIQCght",
+            "YXhfc3RhdBgGIAEoBRITCgtpc19wcmlvcml0eRgHIAEoCCJSChpTa2lsbERl",
+            "Y2tJdGVtUGFyYW1Mb3RUYWJsZRI0CgdlbnRyaWVzGAEgAygLMiMuUmVNYXN0",
+            "ZXJzTGliLlNraWxsRGVja0l0ZW1QYXJhbUxvdGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::ReMastersLib.DeckItemReflection.Descriptor, global::ReMastersLib.SkillDeckItemLotParamCoefficientReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::ReMastersLib.EquipmentTypesReflection.Descriptor, global::ReMastersLib.StatsReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::ReMastersLib.SkillDeckItemParamLot), global::ReMastersLib.SkillDeckItemParamLot.Parser, new[]{ "SkillDeckItemNumLot", "EquipmentType", "Stat", "EntryWeight", "MinStat", "MaxStat", "IsPriority" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::ReMastersLib.SkillDeckItemParamLotTable), global::ReMastersLib.SkillDeckItemParamLotTable.Parser, new[]{ "Entries" }, null, null, null, null)

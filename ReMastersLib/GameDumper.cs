@@ -64,25 +64,52 @@ namespace ReMastersLib
             // don't care about bundle_header_hash.asdb
         }
 
-        public void DumpMessagesAPK(string outRoot)
+        public void DumpMessagesAPK(string outRoot, string repoRoot = null, string websiteDataPath = null)
         {
             var messages = Path.Combine(BasePath, @"assets\resources\assets\Messages");
             var jsonPath = Path.Combine(outRoot, "lsddump", "apk");
             var txtPath = Path.Combine(outRoot, "lsddump", "lsd_apk.txt");
             LSDDumper.Dump(messages, jsonPath, txtPath);
+
+            if(!Directory.Exists(jsonPath))
+                return;
+
+            if (repoRoot != null)
+            {
+                Console.WriteLine("Copying apk lsd files to repository...");
+                Util.Copy(jsonPath, Path.Combine(repoRoot, "text", "lsddump", "apk"));
+            }
+            if (websiteDataPath != null)
+            {
+                Console.WriteLine("Copying apk lsd files to website data...");
+                Util.Copy(jsonPath, Path.Combine(websiteDataPath, "lsd"), SearchOption.TopDirectoryOnly);
+            }
         }
 
-        public void DumpMessagesDownload(string outRoot, string repoRoot = null)
+        public void DumpMessagesDownload(string outRoot, string repoRoot = null, string websiteDataPath = null)
         {
             var messages = Path.Combine(outRoot, "Messages");
             var jsonPath = Path.Combine(outRoot, "lsddump", "dl");
             var txtPath = Path.Combine(outRoot, "lsddump", "lsd_dl.txt");
+            
+            if(!Directory.Exists(messages))
+                return;
+            
             LSDDumper.Dump(messages, jsonPath, txtPath);
 
-            if (repoRoot == null) return;
+            if(!Directory.Exists(jsonPath))
+                return;
             
-            Console.WriteLine("Copying lsd files to repository...");
-            Util.Copy(Path.Combine(outRoot, "lsddump"), Path.Combine(repoRoot, "text", "lsddump"));
+            if (repoRoot != null)
+            {
+                Console.WriteLine("Copying dl lsd files to repository...");
+                Util.Copy(jsonPath, Path.Combine(repoRoot, "text", "lsddump", "dl"));
+            }
+            if (websiteDataPath != null)
+            {
+                Console.WriteLine("Copying dl lsd files to website data...");
+                Util.Copy(jsonPath, Path.Combine(websiteDataPath, "lsd"), SearchOption.TopDirectoryOnly);
+            }
         }
 
         public void DumpResources(string outRoot)
@@ -268,7 +295,8 @@ namespace ReMastersLib
             DumpMiscVideo(outRoot);
         }
 
-        public void DumpProto(string outRoot, string repoRoot = "", bool tableLayout = true)
+        public void DumpProto(string outRoot, string repoRoot = "", string websiteDataPath = "",
+            bool tableLayout = true)
         {
             var pdf = Path.Combine(outRoot, "protodump");
             Directory.CreateDirectory(pdf);
@@ -285,6 +313,7 @@ namespace ReMastersLib
                     Debug.WriteLine($"Couldn't find proto data file: {name}");
                     continue;
                 }
+
                 var data = File.ReadAllBytes(path);
 
                 if (tableLayout)
@@ -295,6 +324,7 @@ namespace ReMastersLib
                         Debug.WriteLine($"Bad conversion for {name}, skipping.");
                         continue;
                     }
+
                     File.WriteAllLines(outpath, result);
                 }
                 else
@@ -305,14 +335,22 @@ namespace ReMastersLib
                         Debug.WriteLine($"Bad conversion for {name}, skipping.");
                         continue;
                     }
+
                     File.WriteAllText(outpath, result);
                 }
             }
 
-            if (repoRoot == null) return;
-            
-            Console.WriteLine("Copying dumped proto files to repository...");
-            Util.Copy(Path.Combine(outRoot, "protodump"), Path.Combine(repoRoot, "text", "protodump"));
+            if (repoRoot != null)
+            {
+                Console.WriteLine("Copying dumped proto files to repository...");
+                Util.Copy(Path.Combine(outRoot, "protodump"), Path.Combine(repoRoot, "text", "protodump"));
+            }
+
+            if (websiteDataPath != null)
+            {
+                Console.WriteLine("Copying dumped proto files to website...");
+                Util.Copy(Path.Combine(outRoot, "protodump"), Path.Combine(websiteDataPath, "proto"));
+            }
         }
 
         /// <summary>

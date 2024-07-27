@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
@@ -47,6 +48,21 @@ namespace ReMastersConsole
                 ShardPath = DataDir + gameVersions.Current() + @"\resources\assetdb_shard",
                 
                 OutputPath = WorkingDir + @"\out\" + gameVersions.Current(),
+                BaseResourcePath = WorkingDir + @"\out\_BaseResources",
+                
+                WebsiteDataPath = @"D:\Documents\dev\gh-pages\Pokebip-com.github.io\masters\data",
+                WebsiteCopyImages = new Dictionary<string, string>()
+                {
+                    // { <RepositoryPathFrom>, <WebsitePathTo> }
+                    { @"\Effects\Textures\Actors\ktx", @"\actor\mindscape" },
+                    { @"\ui\image\Actor\Monster", @"\actor\Monster" },
+                    { @"\ui\image\Actor\Trainer", @"\actor\Trainer" },
+                    { @"\ui\image\Banner\Campaign", @"\banner\event" },
+                    { @"\ui\image\Banner\ChampionBattle", @"\banner\event" },
+                    { @"\ui\image\Banner\Event", @"\banner\event" },
+                    { @"\ui\image\Banner\Scout", @"\banner\scout" },
+                    { @"\ui\image\Item", @"\item" },
+                },
             };
 
             Directory.CreateDirectory(paths.OutputPath);
@@ -68,10 +84,13 @@ namespace ReMastersConsole
                     DumpSound = false,
                     DumpVideo = false,
                     DumpProto = true,
+                    
+                    ConvertImages = false,
+                    CopyResToBase = false,
                 };
 
                 settings.DumpGameData();
-            #else
+#else
                 var settings = new DumpSettings(paths)
                 {
                     DumpStringsDL = true,
@@ -81,11 +100,13 @@ namespace ReMastersConsole
                     DumpSound = false,
                     DumpVideo = false,
                     DumpProto = true,
+                    
+                    ConvertImages = true,
+                    CopyResToBase = false,
                 };
 
                 settings.DumpGameData();
-                settings.ConvertKTX();
-            #endif
+#endif
 
         }
     }

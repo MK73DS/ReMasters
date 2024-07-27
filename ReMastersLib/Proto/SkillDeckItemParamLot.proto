@@ -1,6 +1,6 @@
 ﻿syntax = "proto3";
-import "DeckItem.proto";
-import "SkillDeckItemLotParamCoefficient.proto";
+import "EquipmentTypes.proto";
+import "Stats.proto";
 
 package ReMastersLib;
 

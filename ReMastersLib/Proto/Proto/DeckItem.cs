@@ -24,18 +24,17 @@ namespace ReMastersLib {
     static DeckItemReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Cg5EZWNrSXRlbS5wcm90bxIMUmVNYXN0ZXJzTGliIswBCghEZWNrSXRlbRIP",
-            "CgdpdGVtX2lkGAEgASgEEhcKD2l0ZW1fc3VidHlwZV9pZBgCIAEoBRIQCghp",
-            "bWFnZV9pZBgDIAEoCRI0Cg5lcXVpcG1lbnRfdHlwZRgEIAEoDjIcLlJlTWFz",
-            "dGVyc0xpYi5FcXVpcG1lbnRUeXBlcxIKCgJ1NRgFIAEoBRIMCgRUeXBlGAYg",
-            "ASgFEg4KBnJhcml0eRgHIAEoBRIYChBkZWNrSXRlbVBhcmFtX2lkGAggASgF",
-            "EgoKAnU5GAkgASgFIjgKDURlY2tJdGVtVGFibGUSJwoHZW50cmllcxgBIAMo",
-            "CzIWLlJlTWFzdGVyc0xpYi5EZWNrSXRlbSo/Cg5FcXVpcG1lbnRUeXBlcxIJ",
-            "CgVPdGhlchAAEgwKCEJyYWNlbGV0EAESCwoHQmFuZGFuYRACEgcKA1BpbhAD",
-            "YgZwcm90bzM="));
+            "Cg5EZWNrSXRlbS5wcm90bxIMUmVNYXN0ZXJzTGliGhRFcXVpcG1lbnRUeXBl",
+            "cy5wcm90byLMAQoIRGVja0l0ZW0SDwoHaXRlbV9pZBgBIAEoBBIXCg9pdGVt",
+            "X3N1YnR5cGVfaWQYAiABKAUSEAoIaW1hZ2VfaWQYAyABKAkSNAoOZXF1aXBt",
+            "ZW50X3R5cGUYBCABKA4yHC5SZU1hc3RlcnNMaWIuRXF1aXBtZW50VHlwZXMS",
+            "CgoCdTUYBSABKAUSDAoEVHlwZRgGIAEoBRIOCgZyYXJpdHkYByABKAUSGAoQ",
+            "ZGVja0l0ZW1QYXJhbV9pZBgIIAEoBRIKCgJ1ORgJIAEoBSI4Cg1EZWNrSXRl",
+            "bVRhYmxlEicKB2VudHJpZXMYASADKAsyFi5SZU1hc3RlcnNMaWIuRGVja0l0",
+            "ZW1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { },
-          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::ReMastersLib.EquipmentTypes), }, null, new pbr::GeneratedClrTypeInfo[] {
+          new pbr::FileDescriptor[] { global::ReMastersLib.EquipmentTypesReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::ReMastersLib.DeckItem), global::ReMastersLib.DeckItem.Parser, new[]{ "ItemId", "ItemSubtypeId", "ImageId", "EquipmentType", "U5", "Type", "Rarity", "DeckItemParamId", "U9" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::ReMastersLib.DeckItemTable), global::ReMastersLib.DeckItemTable.Parser, new[]{ "Entries" }, null, null, null, null)
           }));
@@ -43,16 +42,6 @@ namespace ReMastersLib {
     #endregion
 
   }
-  #region Enums
-  public enum EquipmentTypes {
-    [pbr::OriginalName("Other")] Other = 0,
-    [pbr::OriginalName("Bracelet")] Bracelet = 1,
-    [pbr::OriginalName("Bandana")] Bandana = 2,
-    [pbr::OriginalName("Pin")] Pin = 3,
-  }
-
-  #endregion
-
   #region Messages
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class DeckItem : pb::IMessage<DeckItem>

@@ -1,4 +1,5 @@
 syntax = "proto3";
+import "EquipmentTypes.proto";
 
 package ReMastersLib;
 
@@ -12,13 +13,6 @@ message DeckItem {
 	int32 rarity = 7;
 	int32 deckItemParam_id = 8;
 	int32 u9 = 9;
-}
-
-enum EquipmentTypes {
-	Other = 0;
-	Bracelet= 1;
-	Bandana = 2;
-	Pin = 3;
 }
 
 message DeckItemTable {

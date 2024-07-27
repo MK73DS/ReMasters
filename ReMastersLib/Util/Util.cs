@@ -16,27 +16,31 @@ namespace ReMastersLib
             return data;
         }
 
-        public static void Copy(string source, string target)
+        public static void Copy(string source, string target, SearchOption so = SearchOption.AllDirectories)
         {
             var diSource = new DirectoryInfo(source);
             var diTarget = new DirectoryInfo(target);
             
-            CopyAll(diSource, diTarget);
+            CopyAll(diSource, diTarget, so);
         }
-        public static void CopyAll(DirectoryInfo source, DirectoryInfo target)
+        public static void CopyAll(DirectoryInfo source, DirectoryInfo target, SearchOption so = SearchOption.AllDirectories)
         {
             Directory.CreateDirectory(target.FullName);
-
-            foreach (FileInfo fi in source.GetFiles())
+            
+            foreach (FileInfo fi in source.GetFiles("*", SearchOption.TopDirectoryOnly))
             {
                 fi.CopyTo(Path.Combine(target.FullName, fi.Name), true);
             }
 
-            foreach (DirectoryInfo subDirectory in source.GetDirectories())
+            if (so == SearchOption.AllDirectories)
             {
-                DirectoryInfo nextTargetSubDir = target.CreateSubdirectory(subDirectory.Name);
-                CopyAll(subDirectory, nextTargetSubDir);
+                foreach (DirectoryInfo subDirectory in source.GetDirectories())
+                {
+                    DirectoryInfo nextTargetSubDir = target.CreateSubdirectory(subDirectory.Name);
+                    CopyAll(subDirectory, nextTargetSubDir);
+                }
             }
+
         }
         
         public abstract class FileComparer {
@@ -148,7 +152,8 @@ namespace ReMastersLib
                     var count1 = ReadIntoBuffer(stream1, buffer1);
                     var count2 = ReadIntoBuffer(stream2, buffer2);
 
-                    if (count1 != count2) {
+                    if (count1 != count2)
+                    {
                         return false;
                     }
 

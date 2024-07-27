@@ -15,6 +15,8 @@ namespace ReMastersLib
         public bool DumpSound { get; set; } = true;
         public bool DumpVideo { get; set; } = true;
         public bool DumpProto { get; set; } = true;
+        public bool ConvertImages { get; set; } = true;
+        public bool CopyResToBase { get; set; } = true;
 
         public readonly GameDataPaths Paths;
 
@@ -31,7 +33,7 @@ namespace ReMastersLib
             if (DumpStringsAPK)
             {
                 Console.WriteLine("Dumping APK Messages...");
-                dumper.DumpMessagesAPK(Paths.OutputPath);
+                dumper.DumpMessagesAPK(Paths.OutputPath, Paths.RepositoryPath, Paths.WebsiteDataPath);
             }
 
             if (DumpResources)
@@ -43,7 +45,7 @@ namespace ReMastersLib
             if (DumpStringsDL)
             {
                 Console.WriteLine("Dumping Download Messages...");
-                dumper.DumpMessagesDownload(Paths.OutputPath, Paths.RepositoryPath);
+                dumper.DumpMessagesDownload(Paths.OutputPath, Paths.RepositoryPath, Paths.WebsiteDataPath);
             }
 
             if (DumpSound)
@@ -61,7 +63,19 @@ namespace ReMastersLib
             if (DumpProto)
             {
                 Console.WriteLine("Dumping Protos...");
-                dumper.DumpProto(Paths.OutputPath, Paths.RepositoryPath);
+                dumper.DumpProto(Paths.OutputPath, Paths.RepositoryPath, Paths.WebsiteDataPath);
+            }
+
+            if (ConvertImages)
+            {
+                Console.WriteLine("Converting images...");
+                ConvertKTX();
+            }
+
+            if (CopyResToBase)
+            {
+                Console.WriteLine("Copying resources to base...");
+                CopyResourcesToBase();
             }
         }
 
@@ -103,20 +117,39 @@ namespace ReMastersLib
             Console.WriteLine("Copying image files to output directory...");
             foreach (string file in images)
             {
-                DirectoryInfo outDir = Directory.CreateDirectory(Path.Combine(outPath, Path.GetDirectoryName(file) ?? "/"));
+                DirectoryInfo outDir = Directory.CreateDirectory((Path.GetDirectoryName(file) ?? "/").Replace(Paths.OutputPath, outPath));
                 File.Copy(Path.Combine(Paths.OutputPath, file), Path.Combine(outDir.FullName, Path.GetFileName(file)), true);
             }
-
+            
             //Conversion et copie des fichiers ktx
             Console.WriteLine("Converting and copying texture files to output directory...");
             foreach (string file in files)
             {
-                DirectoryInfo outDir = Directory.CreateDirectory(Path.Combine(outPath, Path.GetDirectoryName(file) ?? "/"));
+                DirectoryInfo outDir = Directory.CreateDirectory((Path.GetDirectoryName(file) ?? "/").Replace(Paths.OutputPath, outPath));
                 string fileName = Path.GetFileNameWithoutExtension(file) + ".png";
-
-                Process.Start(Paths.KTXConverterPath, "-i " + Path.Combine(Paths.OutputPath, file) + " -f r8g8b8a8 -d " + Path.Combine(outDir.FullName, fileName))
+                string output = Path.Combine(outDir.FullName, fileName);
+                
+                Process.Start(Paths.KTXConverterPath, "-i " + Path.Combine(Paths.OutputPath, file) + " -f r8g8b8a8 -d " + output)
                     ?.WaitForExit();
+                
+                foreach (string key in Paths.WebsiteCopyImages.Keys)
+                {
+                    if (output.Contains(key))
+                    {
+                        DirectoryInfo websiteDir = Directory.CreateDirectory(outDir.FullName
+                            .Replace(outPath, Paths.WebsiteDataPath)
+                            .Replace(key, Paths.WebsiteCopyImages[key]));
+                        
+                        File.Copy(output, Path.Combine(websiteDir.FullName, fileName), true);
+                        break;
+                    }
+                }
             }
+        }
+
+        public void CopyResourcesToBase()
+        {
+            
         }
     }
 }
