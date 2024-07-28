@@ -25,15 +25,16 @@ namespace ReMastersLib {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiZTa2lsbERlY2tJdGVtTG90UGFyYW1Db2VmZmljaWVudC5wcm90bxIMUmVN",
-            "YXN0ZXJzTGliGgtTdGF0cy5wcm90byJZCiBTa2lsbERlY2tJdGVtTG90UGFy",
-            "YW1Db2VmZmljaWVudBIgCgRzdGF0GAEgASgOMhIuUmVNYXN0ZXJzTGliLlN0",
-            "YXQSEwoLY29lZmZpY2llbnQYAiABKAUiaAolU2tpbGxEZWNrSXRlbUxvdFBh",
-            "cmFtQ29lZmZpY2llbnRUYWJsZRI/CgdlbnRyaWVzGAEgAygLMi4uUmVNYXN0",
-            "ZXJzTGliLlNraWxsRGVja0l0ZW1Mb3RQYXJhbUNvZWZmaWNpZW50YgZwcm90",
-            "bzM="));
+            "YXN0ZXJzTGliIlkKIFNraWxsRGVja0l0ZW1Mb3RQYXJhbUNvZWZmaWNpZW50",
+            "EiAKBHN0YXQYASABKA4yEi5SZU1hc3RlcnNMaWIuU3RhdBITCgtjb2VmZmlj",
+            "aWVudBgCIAEoBSJoCiVTa2lsbERlY2tJdGVtTG90UGFyYW1Db2VmZmljaWVu",
+            "dFRhYmxlEj8KB2VudHJpZXMYASADKAsyLi5SZU1hc3RlcnNMaWIuU2tpbGxE",
+            "ZWNrSXRlbUxvdFBhcmFtQ29lZmZpY2llbnQqRQoEU3RhdBIICgROb25lEAAS",
+            "BgoCaHAQARIHCgNhdGsQAhIHCgNkZWYQAxIHCgNzcGEQBBIHCgNzcGQQBRIH",
+            "CgNzcGUQBmIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::ReMastersLib.StatsReflection.Descriptor, },
-          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::ReMastersLib.Stat), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::ReMastersLib.SkillDeckItemLotParamCoefficient), global::ReMastersLib.SkillDeckItemLotParamCoefficient.Parser, new[]{ "Stat", "Coefficient" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::ReMastersLib.SkillDeckItemLotParamCoefficientTable), global::ReMastersLib.SkillDeckItemLotParamCoefficientTable.Parser, new[]{ "Entries" }, null, null, null, null)
           }));
@@ -41,6 +42,19 @@ namespace ReMastersLib {
     #endregion
 
   }
+  #region Enums
+  public enum Stat {
+    [pbr::OriginalName("None")] None = 0,
+    [pbr::OriginalName("hp")] Hp = 1,
+    [pbr::OriginalName("atk")] Atk = 2,
+    [pbr::OriginalName("def")] Def = 3,
+    [pbr::OriginalName("spa")] Spa = 4,
+    [pbr::OriginalName("spd")] Spd = 5,
+    [pbr::OriginalName("spe")] Spe = 6,
+  }
+
+  #endregion
+
   #region Messages
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class SkillDeckItemLotParamCoefficient : pb::IMessage<SkillDeckItemLotParamCoefficient>

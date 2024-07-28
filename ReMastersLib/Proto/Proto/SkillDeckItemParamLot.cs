@@ -24,18 +24,21 @@ namespace ReMastersLib {
     static SkillDeckItemParamLotReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChtTa2lsbERlY2tJdGVtUGFyYW1Mb3QucHJvdG8SDFJlTWFzdGVyc0xpYhoU",
-            "RXF1aXBtZW50VHlwZXMucHJvdG8aC1N0YXRzLnByb3RvIt8BChVTa2lsbERl",
-            "Y2tJdGVtUGFyYW1Mb3QSHwoXc2tpbGxfZGVja19pdGVtX251bV9sb3QYASAB",
-            "KAUSNAoOZXF1aXBtZW50X3R5cGUYAiABKA4yHC5SZU1hc3RlcnNMaWIuRXF1",
-            "aXBtZW50VHlwZXMSIAoEc3RhdBgDIAEoDjISLlJlTWFzdGVyc0xpYi5TdGF0",
-            "EhQKDGVudHJ5X3dlaWdodBgEIAEoBRIQCghtaW5fc3RhdBgFIAEoBRIQCght",
-            "YXhfc3RhdBgGIAEoBRITCgtpc19wcmlvcml0eRgHIAEoCCJSChpTa2lsbERl",
-            "Y2tJdGVtUGFyYW1Mb3RUYWJsZRI0CgdlbnRyaWVzGAEgAygLMiMuUmVNYXN0",
-            "ZXJzTGliLlNraWxsRGVja0l0ZW1QYXJhbUxvdGIGcHJvdG8z"));
+            "ChtTa2lsbERlY2tJdGVtUGFyYW1Mb3QucHJvdG8SDFJlTWFzdGVyc0xpYiLi",
+            "AQoVU2tpbGxEZWNrSXRlbVBhcmFtTG90Eh8KF3NraWxsX2RlY2tfaXRlbV9u",
+            "dW1fbG90GAEgASgFEjMKDmVxdWlwbWVudF90eXBlGAIgASgOMhsuUmVNYXN0",
+            "ZXJzTGliLkVxdWlwbWVudFR5cGUSJAoEc3RhdBgDIAEoDjIWLlJlTWFzdGVy",
+            "c0xpYi5JdGVtU3RhdBIUCgxlbnRyeV93ZWlnaHQYBCABKAUSEAoIbWluX3N0",
+            "YXQYBSABKAUSEAoIbWF4X3N0YXQYBiABKAUSEwoLaXNfcHJpb3JpdHkYByAB",
+            "KAgiUgoaU2tpbGxEZWNrSXRlbVBhcmFtTG90VGFibGUSNAoHZW50cmllcxgB",
+            "IAMoCzIjLlJlTWFzdGVyc0xpYi5Ta2lsbERlY2tJdGVtUGFyYW1Mb3QqSQoI",
+            "SXRlbVN0YXQSCAoETm9uZRAAEgYKAmhwEAESBwoDYXRrEAISBwoDZGVmEAMS",
+            "BwoDc3BhEAQSBwoDc3BkEAUSBwoDc3BlEAYqPgoNRXF1aXBtZW50VHlwZRIJ",
+            "CgVPdGhlchAAEgwKCEJyYWNlbGV0EAESCwoHQmFuZGFuYRACEgcKA1BpbhAD",
+            "YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::ReMastersLib.EquipmentTypesReflection.Descriptor, global::ReMastersLib.StatsReflection.Descriptor, },
-          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::ReMastersLib.ItemStat), typeof(global::ReMastersLib.EquipmentType), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::ReMastersLib.SkillDeckItemParamLot), global::ReMastersLib.SkillDeckItemParamLot.Parser, new[]{ "SkillDeckItemNumLot", "EquipmentType", "Stat", "EntryWeight", "MinStat", "MaxStat", "IsPriority" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::ReMastersLib.SkillDeckItemParamLotTable), global::ReMastersLib.SkillDeckItemParamLotTable.Parser, new[]{ "Entries" }, null, null, null, null)
           }));
@@ -43,6 +46,26 @@ namespace ReMastersLib {
     #endregion
 
   }
+  #region Enums
+  public enum ItemStat {
+    [pbr::OriginalName("None")] None = 0,
+    [pbr::OriginalName("hp")] Hp = 1,
+    [pbr::OriginalName("atk")] Atk = 2,
+    [pbr::OriginalName("def")] Def = 3,
+    [pbr::OriginalName("spa")] Spa = 4,
+    [pbr::OriginalName("spd")] Spd = 5,
+    [pbr::OriginalName("spe")] Spe = 6,
+  }
+
+  public enum EquipmentType {
+    [pbr::OriginalName("Other")] Other = 0,
+    [pbr::OriginalName("Bracelet")] Bracelet = 1,
+    [pbr::OriginalName("Bandana")] Bandana = 2,
+    [pbr::OriginalName("Pin")] Pin = 3,
+  }
+
+  #endregion
+
   #region Messages
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class SkillDeckItemParamLot : pb::IMessage<SkillDeckItemParamLot>
@@ -112,10 +135,10 @@ namespace ReMastersLib {
 
     /// <summary>Field number for the "equipment_type" field.</summary>
     public const int EquipmentTypeFieldNumber = 2;
-    private global::ReMastersLib.EquipmentTypes equipmentType_ = global::ReMastersLib.EquipmentTypes.Other;
+    private global::ReMastersLib.EquipmentType equipmentType_ = global::ReMastersLib.EquipmentType.Other;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::ReMastersLib.EquipmentTypes EquipmentType {
+    public global::ReMastersLib.EquipmentType EquipmentType {
       get { return equipmentType_; }
       set {
         equipmentType_ = value;
@@ -124,10 +147,10 @@ namespace ReMastersLib {
 
     /// <summary>Field number for the "stat" field.</summary>
     public const int StatFieldNumber = 3;
-    private global::ReMastersLib.Stat stat_ = global::ReMastersLib.Stat.None;
+    private global::ReMastersLib.ItemStat stat_ = global::ReMastersLib.ItemStat.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::ReMastersLib.Stat Stat {
+    public global::ReMastersLib.ItemStat Stat {
       get { return stat_; }
       set {
         stat_ = value;
@@ -212,8 +235,8 @@ namespace ReMastersLib {
     public override int GetHashCode() {
       int hash = 1;
       if (SkillDeckItemNumLot != 0) hash ^= SkillDeckItemNumLot.GetHashCode();
-      if (EquipmentType != global::ReMastersLib.EquipmentTypes.Other) hash ^= EquipmentType.GetHashCode();
-      if (Stat != global::ReMastersLib.Stat.None) hash ^= Stat.GetHashCode();
+      if (EquipmentType != global::ReMastersLib.EquipmentType.Other) hash ^= EquipmentType.GetHashCode();
+      if (Stat != global::ReMastersLib.ItemStat.None) hash ^= Stat.GetHashCode();
       if (EntryWeight != 0) hash ^= EntryWeight.GetHashCode();
       if (MinStat != 0) hash ^= MinStat.GetHashCode();
       if (MaxStat != 0) hash ^= MaxStat.GetHashCode();
@@ -240,11 +263,11 @@ namespace ReMastersLib {
         output.WriteRawTag(8);
         output.WriteInt32(SkillDeckItemNumLot);
       }
-      if (EquipmentType != global::ReMastersLib.EquipmentTypes.Other) {
+      if (EquipmentType != global::ReMastersLib.EquipmentType.Other) {
         output.WriteRawTag(16);
         output.WriteEnum((int) EquipmentType);
       }
-      if (Stat != global::ReMastersLib.Stat.None) {
+      if (Stat != global::ReMastersLib.ItemStat.None) {
         output.WriteRawTag(24);
         output.WriteEnum((int) Stat);
       }
@@ -278,11 +301,11 @@ namespace ReMastersLib {
         output.WriteRawTag(8);
         output.WriteInt32(SkillDeckItemNumLot);
       }
-      if (EquipmentType != global::ReMastersLib.EquipmentTypes.Other) {
+      if (EquipmentType != global::ReMastersLib.EquipmentType.Other) {
         output.WriteRawTag(16);
         output.WriteEnum((int) EquipmentType);
       }
-      if (Stat != global::ReMastersLib.Stat.None) {
+      if (Stat != global::ReMastersLib.ItemStat.None) {
         output.WriteRawTag(24);
         output.WriteEnum((int) Stat);
       }
@@ -315,10 +338,10 @@ namespace ReMastersLib {
       if (SkillDeckItemNumLot != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(SkillDeckItemNumLot);
       }
-      if (EquipmentType != global::ReMastersLib.EquipmentTypes.Other) {
+      if (EquipmentType != global::ReMastersLib.EquipmentType.Other) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) EquipmentType);
       }
-      if (Stat != global::ReMastersLib.Stat.None) {
+      if (Stat != global::ReMastersLib.ItemStat.None) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Stat);
       }
       if (EntryWeight != 0) {
@@ -348,10 +371,10 @@ namespace ReMastersLib {
       if (other.SkillDeckItemNumLot != 0) {
         SkillDeckItemNumLot = other.SkillDeckItemNumLot;
       }
-      if (other.EquipmentType != global::ReMastersLib.EquipmentTypes.Other) {
+      if (other.EquipmentType != global::ReMastersLib.EquipmentType.Other) {
         EquipmentType = other.EquipmentType;
       }
-      if (other.Stat != global::ReMastersLib.Stat.None) {
+      if (other.Stat != global::ReMastersLib.ItemStat.None) {
         Stat = other.Stat;
       }
       if (other.EntryWeight != 0) {
@@ -386,11 +409,11 @@ namespace ReMastersLib {
             break;
           }
           case 16: {
-            EquipmentType = (global::ReMastersLib.EquipmentTypes) input.ReadEnum();
+            EquipmentType = (global::ReMastersLib.EquipmentType) input.ReadEnum();
             break;
           }
           case 24: {
-            Stat = (global::ReMastersLib.Stat) input.ReadEnum();
+            Stat = (global::ReMastersLib.ItemStat) input.ReadEnum();
             break;
           }
           case 32: {
@@ -429,11 +452,11 @@ namespace ReMastersLib {
             break;
           }
           case 16: {
-            EquipmentType = (global::ReMastersLib.EquipmentTypes) input.ReadEnum();
+            EquipmentType = (global::ReMastersLib.EquipmentType) input.ReadEnum();
             break;
           }
           case 24: {
-            Stat = (global::ReMastersLib.Stat) input.ReadEnum();
+            Stat = (global::ReMastersLib.ItemStat) input.ReadEnum();
             break;
           }
           case 32: {
