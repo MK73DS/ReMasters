@@ -15,8 +15,6 @@ namespace ReMastersLib
         public bool DumpSound { get; set; } = true;
         public bool DumpVideo { get; set; } = true;
         public bool DumpProto { get; set; } = true;
-        public bool ConvertImages { get; set; } = true;
-        public bool CopyResToBase { get; set; } = true;
 
         public readonly GameDataPaths Paths;
 
@@ -33,7 +31,7 @@ namespace ReMastersLib
             if (DumpStringsAPK)
             {
                 Console.WriteLine("Dumping APK Messages...");
-                dumper.DumpMessagesAPK(Paths.OutputPath, Paths.RepositoryPath, Paths.WebsiteDataPath);
+                dumper.DumpMessagesAPK(Paths.OutputPath);
             }
 
             if (DumpResources)
@@ -45,7 +43,7 @@ namespace ReMastersLib
             if (DumpStringsDL)
             {
                 Console.WriteLine("Dumping Download Messages...");
-                dumper.DumpMessagesDownload(Paths.OutputPath, Paths.RepositoryPath, Paths.WebsiteDataPath);
+                dumper.DumpMessagesDownload(Paths.OutputPath, Paths.RepositoryPath);
             }
 
             if (DumpSound)
@@ -63,93 +61,8 @@ namespace ReMastersLib
             if (DumpProto)
             {
                 Console.WriteLine("Dumping Protos...");
-                dumper.DumpProto(Paths.OutputPath, Paths.RepositoryPath, Paths.WebsiteDataPath);
+                dumper.DumpProto(Paths.OutputPath, Paths.RepositoryPath);
             }
-
-            if (ConvertImages)
-            {
-                Console.WriteLine("Converting images...");
-                ConvertKTX();
-            }
-
-            if (CopyResToBase)
-            {
-                Console.WriteLine("Copying resources to base...");
-                CopyResourcesToBase();
-            }
-        }
-
-        public void ConvertKTX()
-        {
-            Console.WriteLine("Getting image and texture files list...");
-            var outFiles = Directory.EnumerateFiles(Paths.OutputPath, "*.ktx", SearchOption.AllDirectories)
-                .Select(fi => fi.Replace(Paths.OutputPath, "").TrimStart(Path.DirectorySeparatorChar));
-            var outImages = Directory.EnumerateFiles(Paths.OutputPath, "*.*", SearchOption.AllDirectories)
-                .Where(s => s.EndsWith(".png") || s.EndsWith(".jpg"))
-                .Select(fi => fi.Replace(Paths.OutputPath, "").TrimStart(Path.DirectorySeparatorChar));
-
-            var files = outFiles; 
-            var images = outImages;
-            
-            if (!String.IsNullOrEmpty(Paths.PreviousPath))
-            {
-                Console.WriteLine("Getting old version image and texture files list...");
-                var prevFiles = Directory.EnumerateFiles(Paths.PreviousPath, "*.ktx", SearchOption.AllDirectories)
-                    .Select(fi => fi.Replace(Paths.PreviousPath, "").TrimStart(Path.DirectorySeparatorChar));
-                var prevImages = Directory.EnumerateFiles(Paths.PreviousPath, "*.*", SearchOption.AllDirectories)
-                    .Where(s => s.EndsWith(".png") || s.EndsWith(".jpg"))
-                    .Select(fi => fi.Replace(Paths.PreviousPath, "").TrimStart(Path.DirectorySeparatorChar));
-                
-                Console.WriteLine("Getting list of new and modified images...");
-                // Récupération des images qui ont été rajoutées OU modifiées
-                images = Util.GetNewOrModified(outImages, prevImages, Paths);
-                Console.WriteLine("{0} new/modified images", images.Count());
-            
-                Console.WriteLine("Getting list of new and modified textures...");
-                // Récupération des fichiers qui ont été rajoutés OU modifiés
-                files = Util.GetNewOrModified(outFiles, prevFiles, Paths);
-                Console.WriteLine("{0} new/modified textures", files.Count());
-            }
-
-            string outPath = Path.Combine(Paths.RepositoryPath, "images");
-
-            //Copie de tous les fichiers png et jpg
-            Console.WriteLine("Copying image files to output directory...");
-            foreach (string file in images)
-            {
-                DirectoryInfo outDir = Directory.CreateDirectory((Path.GetDirectoryName(file) ?? "/").Replace(Paths.OutputPath, outPath));
-                File.Copy(Path.Combine(Paths.OutputPath, file), Path.Combine(outDir.FullName, Path.GetFileName(file)), true);
-            }
-            
-            //Conversion et copie des fichiers ktx
-            Console.WriteLine("Converting and copying texture files to output directory...");
-            foreach (string file in files)
-            {
-                DirectoryInfo outDir = Directory.CreateDirectory((Path.GetDirectoryName(file) ?? "/").Replace(Paths.OutputPath, outPath));
-                string fileName = Path.GetFileNameWithoutExtension(file) + ".png";
-                string output = Path.Combine(outDir.FullName, fileName);
-                
-                Process.Start(Paths.KTXConverterPath, "-i " + Path.Combine(Paths.OutputPath, file) + " -f r8g8b8a8 -d " + output)
-                    ?.WaitForExit();
-                
-                foreach (string key in Paths.WebsiteCopyImages.Keys)
-                {
-                    if (output.Contains(key))
-                    {
-                        DirectoryInfo websiteDir = Directory.CreateDirectory(outDir.FullName
-                            .Replace(outPath, Paths.WebsiteDataPath)
-                            .Replace(key, Paths.WebsiteCopyImages[key]));
-                        
-                        File.Copy(output, Path.Combine(websiteDir.FullName, fileName), true);
-                        break;
-                    }
-                }
-            }
-        }
-
-        public void CopyResourcesToBase()
-        {
-            
         }
     }
 }

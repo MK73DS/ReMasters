@@ -3,7 +3,7 @@ syntax = "proto3";
 package ReMastersLib;
 
 message Action {
-	uint32 u1 = 1;
+    uint32 u1 = 1;
     uint32 u2 = 2;
     string u3 = 3;
     string u4 = 4;

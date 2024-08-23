@@ -25,6 +25,40 @@
   
   <ItemGroup>
     <Protobuf Include="**/*.proto" OutputDir="%(Relativedir)" CompileOutputs="false" GrpcServices="None" />
+    <Protobuf Update="Proto\Rank.proto">
+      <Access>Public</Access>
+      <ProtoCompile>True</ProtoCompile>
+    </Protobuf>
+    <Protobuf Update="Proto\ChallengeToStrongTrainerQuestGroup.proto">
+      <Access>Public</Access>
+      <ProtoCompile>True</ProtoCompile>
+      <OutputDir>Proto\</OutputDir>
+      <Generator>MSBuild:Compile</Generator>
+    </Protobuf>
+    <Protobuf Update="Proto\ChampionBattleOpeningSchedule.proto">
+      <Access>Public</Access>
+      <ProtoCompile>True</ProtoCompile>
+      <OutputDir>Proto\</OutputDir>
+      <Generator>MSBuild:Compile</Generator>
+    </Protobuf>
+    <Protobuf Update="Proto\ChampionBattleRegion.proto">
+      <Access>Public</Access>
+      <ProtoCompile>True</ProtoCompile>
+      <OutputDir>Proto\</OutputDir>
+      <Generator>MSBuild:Compile</Generator>
+    </Protobuf>
+    <Protobuf Update="Proto\ReplaceActorKeyword.proto">
+      <Access>Public</Access>
+      <ProtoCompile>True</ProtoCompile>
+      <OutputDir>Proto\</OutputDir>
+      <Generator>MSBuild:Compile</Generator>
+    </Protobuf>
+    <Protobuf Update="Proto\ShopPurchasableItem.proto">
+      <Access>Public</Access>
+      <ProtoCompile>True</ProtoCompile>
+      <OutputDir>Proto\</OutputDir>
+      <Generator>MSBuild:Compile</Generator>
+    </Protobuf>
   </ItemGroup>
 
 </Project>

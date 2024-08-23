@@ -7,7 +7,7 @@ message BattleReward {
     int32 exp = 2;
     int32 coins = 3;
     int32 u4 = 4;
-    repeated int32 reward_preset_ids = 5;	// BattleRewardPreset.pb
+    repeated int32 reward_preset_ids = 5;    // BattleRewardPreset.pb
 }
 
 message BattleRewardTable {

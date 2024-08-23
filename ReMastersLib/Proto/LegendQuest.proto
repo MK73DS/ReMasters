@@ -3,10 +3,10 @@ syntax = "proto3";
 package ReMastersLib;
 
 message LegendQuest {
-	int64 story_quest_id = 1;
-	int64 item_id = 2;
+    int64 story_quest_id = 1;
+    int64 item_id = 2;
 }
 
 message LegendQuestTable {
-	repeated LegendQuest entries = 1;
+    repeated LegendQuest entries = 1;
 }

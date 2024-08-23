@@ -2,10 +2,10 @@ syntax = "proto3";
 package ReMastersLib;
 
 message DeckPresetGroup {
-	int32 deck_preset_group_id = 1;
-	int32 deck_preset_id = 2;			// DeckPreset.pb
+    int32 deck_preset_group_id = 1;
+    int32 deck_preset_id = 2;            // DeckPreset.pb
 }
 
 message DeckPresetGroupTable {
-	repeated DeckPresetGroup entries = 1;
+    repeated DeckPresetGroup entries = 1;
 }

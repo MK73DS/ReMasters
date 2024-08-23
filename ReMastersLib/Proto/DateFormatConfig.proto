@@ -2,13 +2,13 @@ syntax = "proto3";
 package ReMastersLib;
 
 message DateFormatConfig {
-	string language = 1;
-	int32 type = 2;			// 1: Date, 2: Date and Time
-	string format = 3;
-	string am_format = 4;
-	string pm_format = 5;
+    string language = 1;
+    int32 type = 2;            // 1: Date, 2: Date and Time
+    string format = 3;
+    string am_format = 4;
+    string pm_format = 5;
 }
 
 message DateFormatConfigTable {
-	repeated DateFormatConfig entries = 1;
+    repeated DateFormatConfig entries = 1;
 }
