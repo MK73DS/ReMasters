@@ -11,7 +11,7 @@ message Trainer {
     int32 type = 6;             // motif_type_name_xx.lsd
     int32 rarity = 7;
     int32 role = 8;             // role_type_name_xx.lsd (0: Physical Strike)
-    uint64 monster_id = 9;         // Monster.pb
+    uint64 monster_id = 9;      // Monster.pb
 
     // Move.pb
     int32 move_1_id = 10;
@@ -28,21 +28,24 @@ message Trainer {
     int32 passive_2_id = 18;
     int32 passive_3_id = 19;
     int32 passive_4_id = 20;
+    int32 passive_5_id = 21;
 
     // TeamSkill.pb
-    int32 team_skill_1_id = 21;
-    int32 team_skill_2_id = 22;
-    int32 team_skill_3_id = 23;
-    int32 team_skill_4_id = 24;
-    int32 team_skill_5_id = 25;
+    int32 team_skill_1_id = 22;
+    int32 team_skill_2_id = 23;
+    int32 team_skill_3_id = 24;
+    int32 team_skill_4_id = 25;
+    int32 team_skill_5_id = 26;
 
-    int32 u26 = 26;
     int32 u27 = 27;
-    int32 number = 28; // least significant 2 digits = alt number, rest = in-game pair number
+    int32 u28 = 28;
+    int32 number = 29;        // least significant 2 digits = alt number, rest = in-game pair number
 
     // Schedule.pb
-    string schedule_id = 29;
-    string ex_schedule_id = 30; // for the 6* EX timeframe
+    string schedule_id = 30;
+    string ex_schedule_id = 31; // for the 6* EX timeframe
+    
+    int32 u32 = 32;
 }
 
 message TrainerTable {
