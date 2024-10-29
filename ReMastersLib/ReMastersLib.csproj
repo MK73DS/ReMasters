@@ -25,6 +25,11 @@
   
   <ItemGroup>
     <Protobuf Include="**/*.proto" OutputDir="%(Relativedir)" CompileOutputs="false" GrpcServices="None" />
+    <Protobuf Update="Proto\PassiveSkillChild.proto">
+      <Access>Public</Access>
+      <ProtoCompile>True</ProtoCompile>
+      <OutputDir>Proto\</OutputDir>
+    </Protobuf>
   </ItemGroup>
 
 </Project>

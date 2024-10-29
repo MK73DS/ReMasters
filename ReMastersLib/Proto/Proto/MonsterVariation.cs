@@ -25,26 +25,27 @@ namespace ReMastersLib {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChxQcm90by9Nb25zdGVyVmFyaWF0aW9uLnByb3RvEgxSZU1hc3RlcnNMaWIi",
-            "0gQKEE1vbnN0ZXJWYXJpYXRpb24SEgoKbW9uc3Rlcl9pZBgBIAEoBBIMCgRm",
+            "hgUKEE1vbnN0ZXJWYXJpYXRpb24SEgoKbW9uc3Rlcl9pZBgBIAEoBBIMCgRm",
             "b3JtGAIgASgNEhAKCGFjdG9yX2lkGAMgASgJEhEKCWF0a19zY2FsZRgEIAEo",
             "DRIRCglkZWZfc2NhbGUYBSABKA0SEQoJc3BhX3NjYWxlGAYgASgNEhEKCXNw",
             "ZF9zY2FsZRgHIAEoDRIRCglzcGVfc2NhbGUYCCABKA0SEQoJbW92ZV8xX2lk",
             "GAkgASgDEhEKCW1vdmVfMl9pZBgKIAEoAxIRCgltb3ZlXzNfaWQYCyABKAMS",
             "EQoJbW92ZV80X2lkGAwgASgDEgwKBHR5cGUYDSABKAMSEAoId2Vha25lc3MY",
             "DiABKAMSFAoMcGFzc2l2ZV8xX2lkGA8gASgFEhQKDHBhc3NpdmVfMl9pZBgQ",
-            "IAEoBRIUCgxwYXNzaXZlXzNfaWQYESABKAUSCwoDdTE4GBIgASgFEgsKA3Ux",
-            "ORgTIAEoBRILCgN1MjAYFCABKAUSCwoDdTIxGBUgASgFEgsKA3UyMhgWIAEo",
-            "BRILCgN1MjMYFyABKAUSCwoDdTI0GBggASgFEgsKA3UyNRgZIAEoBRIPCgdm",
-            "b3JtX2lkGBogASgFEgsKA3UyNxgbIAEoBRILCgN1MjgYHCABKAUSGQoRbW92",
-            "ZV9keW5hbWF4XzFfaWQYHSABKAUSGQoRbW92ZV9keW5hbWF4XzJfaWQYHiAB",
-            "KAUSGQoRbW92ZV9keW5hbWF4XzNfaWQYHyABKAUSGQoRbW92ZV9keW5hbWF4",
-            "XzRfaWQYICABKAUiSAoVTW9uc3RlclZhcmlhdGlvblRhYmxlEi8KB2VudHJp",
-            "ZXMYASADKAsyHi5SZU1hc3RlcnNMaWIuTW9uc3RlclZhcmlhdGlvbmIGcHJv",
-            "dG8z"));
+            "IAEoBRIUCgxwYXNzaXZlXzNfaWQYESABKAUSFAoMcGFzc2l2ZV80X2lkGBIg",
+            "ASgFEhQKDHBhc3NpdmVfNV9pZBgTIAEoBRILCgN1MjAYFCABKAUSCwoDdTIx",
+            "GBUgASgFEgsKA3UyMhgWIAEoBRILCgN1MjMYFyABKAUSCwoDdTI0GBggASgF",
+            "EgsKA3UyNRgZIAEoBRIPCgdmb3JtX2lkGBogASgFEgsKA3UyNxgbIAEoBRIL",
+            "CgN1MjgYHCABKAUSGQoRbW92ZV9keW5hbWF4XzFfaWQYHSABKAUSGQoRbW92",
+            "ZV9keW5hbWF4XzJfaWQYHiABKAUSGQoRbW92ZV9keW5hbWF4XzNfaWQYHyAB",
+            "KAUSGQoRbW92ZV9keW5hbWF4XzRfaWQYICABKAUSEwoLc2NoZWR1bGVfaWQY",
+            "ISABKAkSCwoDdTM0GCIgASgFIkgKFU1vbnN0ZXJWYXJpYXRpb25UYWJsZRIv",
+            "CgdlbnRyaWVzGAEgAygLMh4uUmVNYXN0ZXJzTGliLk1vbnN0ZXJWYXJpYXRp",
+            "b25iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::ReMastersLib.MonsterVariation), global::ReMastersLib.MonsterVariation.Parser, new[]{ "MonsterId", "Form", "ActorId", "AtkScale", "DefScale", "SpaScale", "SpdScale", "SpeScale", "Move1Id", "Move2Id", "Move3Id", "Move4Id", "Type", "Weakness", "Passive1Id", "Passive2Id", "Passive3Id", "U18", "U19", "U20", "U21", "U22", "U23", "U24", "U25", "FormId", "U27", "U28", "MoveDynamax1Id", "MoveDynamax2Id", "MoveDynamax3Id", "MoveDynamax4Id" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::ReMastersLib.MonsterVariation), global::ReMastersLib.MonsterVariation.Parser, new[]{ "MonsterId", "Form", "ActorId", "AtkScale", "DefScale", "SpaScale", "SpdScale", "SpeScale", "Move1Id", "Move2Id", "Move3Id", "Move4Id", "Type", "Weakness", "Passive1Id", "Passive2Id", "Passive3Id", "Passive4Id", "Passive5Id", "U20", "U21", "U22", "U23", "U24", "U25", "FormId", "U27", "U28", "MoveDynamax1Id", "MoveDynamax2Id", "MoveDynamax3Id", "MoveDynamax4Id", "ScheduleId", "U34" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::ReMastersLib.MonsterVariationTable), global::ReMastersLib.MonsterVariationTable.Parser, new[]{ "Entries" }, null, null, null, null)
           }));
     }
@@ -103,8 +104,8 @@ namespace ReMastersLib {
       passive1Id_ = other.passive1Id_;
       passive2Id_ = other.passive2Id_;
       passive3Id_ = other.passive3Id_;
-      u18_ = other.u18_;
-      u19_ = other.u19_;
+      passive4Id_ = other.passive4Id_;
+      passive5Id_ = other.passive5Id_;
       u20_ = other.u20_;
       u21_ = other.u21_;
       u22_ = other.u22_;
@@ -118,6 +119,8 @@ namespace ReMastersLib {
       moveDynamax2Id_ = other.moveDynamax2Id_;
       moveDynamax3Id_ = other.moveDynamax3Id_;
       moveDynamax4Id_ = other.moveDynamax4Id_;
+      scheduleId_ = other.scheduleId_;
+      u34_ = other.u34_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -334,27 +337,27 @@ namespace ReMastersLib {
       }
     }
 
-    /// <summary>Field number for the "u18" field.</summary>
-    public const int U18FieldNumber = 18;
-    private int u18_;
+    /// <summary>Field number for the "passive_4_id" field.</summary>
+    public const int Passive4IdFieldNumber = 18;
+    private int passive4Id_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int U18 {
-      get { return u18_; }
+    public int Passive4Id {
+      get { return passive4Id_; }
       set {
-        u18_ = value;
+        passive4Id_ = value;
       }
     }
 
-    /// <summary>Field number for the "u19" field.</summary>
-    public const int U19FieldNumber = 19;
-    private int u19_;
+    /// <summary>Field number for the "passive_5_id" field.</summary>
+    public const int Passive5IdFieldNumber = 19;
+    private int passive5Id_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int U19 {
-      get { return u19_; }
+    public int Passive5Id {
+      get { return passive5Id_; }
       set {
-        u19_ = value;
+        passive5Id_ = value;
       }
     }
 
@@ -517,6 +520,33 @@ namespace ReMastersLib {
       }
     }
 
+    /// <summary>Field number for the "schedule_id" field.</summary>
+    public const int ScheduleIdFieldNumber = 33;
+    private string scheduleId_ = "";
+    /// <summary>
+    /// Schedule.pb
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string ScheduleId {
+      get { return scheduleId_; }
+      set {
+        scheduleId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "u34" field.</summary>
+    public const int U34FieldNumber = 34;
+    private int u34_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int U34 {
+      get { return u34_; }
+      set {
+        u34_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -549,8 +579,8 @@ namespace ReMastersLib {
       if (Passive1Id != other.Passive1Id) return false;
       if (Passive2Id != other.Passive2Id) return false;
       if (Passive3Id != other.Passive3Id) return false;
-      if (U18 != other.U18) return false;
-      if (U19 != other.U19) return false;
+      if (Passive4Id != other.Passive4Id) return false;
+      if (Passive5Id != other.Passive5Id) return false;
       if (U20 != other.U20) return false;
       if (U21 != other.U21) return false;
       if (U22 != other.U22) return false;
@@ -564,6 +594,8 @@ namespace ReMastersLib {
       if (MoveDynamax2Id != other.MoveDynamax2Id) return false;
       if (MoveDynamax3Id != other.MoveDynamax3Id) return false;
       if (MoveDynamax4Id != other.MoveDynamax4Id) return false;
+      if (ScheduleId != other.ScheduleId) return false;
+      if (U34 != other.U34) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -588,8 +620,8 @@ namespace ReMastersLib {
       if (Passive1Id != 0) hash ^= Passive1Id.GetHashCode();
       if (Passive2Id != 0) hash ^= Passive2Id.GetHashCode();
       if (Passive3Id != 0) hash ^= Passive3Id.GetHashCode();
-      if (U18 != 0) hash ^= U18.GetHashCode();
-      if (U19 != 0) hash ^= U19.GetHashCode();
+      if (Passive4Id != 0) hash ^= Passive4Id.GetHashCode();
+      if (Passive5Id != 0) hash ^= Passive5Id.GetHashCode();
       if (U20 != 0) hash ^= U20.GetHashCode();
       if (U21 != 0) hash ^= U21.GetHashCode();
       if (U22 != 0) hash ^= U22.GetHashCode();
@@ -603,6 +635,8 @@ namespace ReMastersLib {
       if (MoveDynamax2Id != 0) hash ^= MoveDynamax2Id.GetHashCode();
       if (MoveDynamax3Id != 0) hash ^= MoveDynamax3Id.GetHashCode();
       if (MoveDynamax4Id != 0) hash ^= MoveDynamax4Id.GetHashCode();
+      if (ScheduleId.Length != 0) hash ^= ScheduleId.GetHashCode();
+      if (U34 != 0) hash ^= U34.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -689,13 +723,13 @@ namespace ReMastersLib {
         output.WriteRawTag(136, 1);
         output.WriteInt32(Passive3Id);
       }
-      if (U18 != 0) {
+      if (Passive4Id != 0) {
         output.WriteRawTag(144, 1);
-        output.WriteInt32(U18);
+        output.WriteInt32(Passive4Id);
       }
-      if (U19 != 0) {
+      if (Passive5Id != 0) {
         output.WriteRawTag(152, 1);
-        output.WriteInt32(U19);
+        output.WriteInt32(Passive5Id);
       }
       if (U20 != 0) {
         output.WriteRawTag(160, 1);
@@ -748,6 +782,14 @@ namespace ReMastersLib {
       if (MoveDynamax4Id != 0) {
         output.WriteRawTag(128, 2);
         output.WriteInt32(MoveDynamax4Id);
+      }
+      if (ScheduleId.Length != 0) {
+        output.WriteRawTag(138, 2);
+        output.WriteString(ScheduleId);
+      }
+      if (U34 != 0) {
+        output.WriteRawTag(144, 2);
+        output.WriteInt32(U34);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -827,13 +869,13 @@ namespace ReMastersLib {
         output.WriteRawTag(136, 1);
         output.WriteInt32(Passive3Id);
       }
-      if (U18 != 0) {
+      if (Passive4Id != 0) {
         output.WriteRawTag(144, 1);
-        output.WriteInt32(U18);
+        output.WriteInt32(Passive4Id);
       }
-      if (U19 != 0) {
+      if (Passive5Id != 0) {
         output.WriteRawTag(152, 1);
-        output.WriteInt32(U19);
+        output.WriteInt32(Passive5Id);
       }
       if (U20 != 0) {
         output.WriteRawTag(160, 1);
@@ -886,6 +928,14 @@ namespace ReMastersLib {
       if (MoveDynamax4Id != 0) {
         output.WriteRawTag(128, 2);
         output.WriteInt32(MoveDynamax4Id);
+      }
+      if (ScheduleId.Length != 0) {
+        output.WriteRawTag(138, 2);
+        output.WriteString(ScheduleId);
+      }
+      if (U34 != 0) {
+        output.WriteRawTag(144, 2);
+        output.WriteInt32(U34);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -948,11 +998,11 @@ namespace ReMastersLib {
       if (Passive3Id != 0) {
         size += 2 + pb::CodedOutputStream.ComputeInt32Size(Passive3Id);
       }
-      if (U18 != 0) {
-        size += 2 + pb::CodedOutputStream.ComputeInt32Size(U18);
+      if (Passive4Id != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(Passive4Id);
       }
-      if (U19 != 0) {
-        size += 2 + pb::CodedOutputStream.ComputeInt32Size(U19);
+      if (Passive5Id != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(Passive5Id);
       }
       if (U20 != 0) {
         size += 2 + pb::CodedOutputStream.ComputeInt32Size(U20);
@@ -992,6 +1042,12 @@ namespace ReMastersLib {
       }
       if (MoveDynamax4Id != 0) {
         size += 2 + pb::CodedOutputStream.ComputeInt32Size(MoveDynamax4Id);
+      }
+      if (ScheduleId.Length != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeStringSize(ScheduleId);
+      }
+      if (U34 != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(U34);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -1056,11 +1112,11 @@ namespace ReMastersLib {
       if (other.Passive3Id != 0) {
         Passive3Id = other.Passive3Id;
       }
-      if (other.U18 != 0) {
-        U18 = other.U18;
+      if (other.Passive4Id != 0) {
+        Passive4Id = other.Passive4Id;
       }
-      if (other.U19 != 0) {
-        U19 = other.U19;
+      if (other.Passive5Id != 0) {
+        Passive5Id = other.Passive5Id;
       }
       if (other.U20 != 0) {
         U20 = other.U20;
@@ -1100,6 +1156,12 @@ namespace ReMastersLib {
       }
       if (other.MoveDynamax4Id != 0) {
         MoveDynamax4Id = other.MoveDynamax4Id;
+      }
+      if (other.ScheduleId.Length != 0) {
+        ScheduleId = other.ScheduleId;
+      }
+      if (other.U34 != 0) {
+        U34 = other.U34;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -1185,11 +1247,11 @@ namespace ReMastersLib {
             break;
           }
           case 144: {
-            U18 = input.ReadInt32();
+            Passive4Id = input.ReadInt32();
             break;
           }
           case 152: {
-            U19 = input.ReadInt32();
+            Passive5Id = input.ReadInt32();
             break;
           }
           case 160: {
@@ -1242,6 +1304,14 @@ namespace ReMastersLib {
           }
           case 256: {
             MoveDynamax4Id = input.ReadInt32();
+            break;
+          }
+          case 266: {
+            ScheduleId = input.ReadString();
+            break;
+          }
+          case 272: {
+            U34 = input.ReadInt32();
             break;
           }
         }
@@ -1328,11 +1398,11 @@ namespace ReMastersLib {
             break;
           }
           case 144: {
-            U18 = input.ReadInt32();
+            Passive4Id = input.ReadInt32();
             break;
           }
           case 152: {
-            U19 = input.ReadInt32();
+            Passive5Id = input.ReadInt32();
             break;
           }
           case 160: {
@@ -1385,6 +1455,14 @@ namespace ReMastersLib {
           }
           case 256: {
             MoveDynamax4Id = input.ReadInt32();
+            break;
+          }
+          case 266: {
+            ScheduleId = input.ReadString();
+            break;
+          }
+          case 272: {
+            U34 = input.ReadInt32();
             break;
           }
         }

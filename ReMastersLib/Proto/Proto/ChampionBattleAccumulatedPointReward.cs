@@ -108,7 +108,7 @@ namespace ReMastersLib {
     public const int QuestGroupIdFieldNumber = 2;
     private uint questGroupId_;
     /// <summary>
-    /// ChampionBattleEventQuestGroup.pb
+    /// ChampionBattleQuestGroup.pb
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]

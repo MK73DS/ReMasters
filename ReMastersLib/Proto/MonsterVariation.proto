@@ -20,8 +20,8 @@ message MonsterVariation {
     int32 passive_1_id = 15;
     int32 passive_2_id = 16;
     int32 passive_3_id = 17;
-    int32 u18 = 18;
-    int32 u19 = 19;
+    int32 passive_4_id = 18;
+    int32 passive_5_id = 19;
     int32 u20 = 20;
     int32 u21 = 21;
     int32 u22 = 22;
@@ -35,6 +35,8 @@ message MonsterVariation {
     int32 move_dynamax_2_id = 30;
     int32 move_dynamax_3_id = 31;
     int32 move_dynamax_4_id = 32;
+    string schedule_id = 33;        // Schedule.pb
+    int32 u34 = 34;
 }
 
 message MonsterVariationTable {
